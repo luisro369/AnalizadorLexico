@@ -1,7 +1,7 @@
 ### C++ ###
 # Prerequisites
 *.d
-ex
+
 # Compiled Object files
 *.slo
 *.lo
@@ -31,3 +31,7 @@ ex
 *.exe
 *.out
 *.app
+
+# Mis eliminaciones
+ex
+.txt

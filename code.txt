@@ -1,0 +1,6 @@
+ENT nombreVariable := 10 ;
+ENT nombreVariable2 := 5 ;
+
+SI nombrevariable MAYOR nombreVariable2 {
+RET ( nombreVariable / nombreVariable2 ) ;
+}
