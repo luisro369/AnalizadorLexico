@@ -1,24 +1,25 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 //archivos necesarios
 #include "StringAnalyzer.h"
 
 using namespace std;
 
-
 int main (void){
-  string cadenaDeTexto = "ENT NombreDeVariable := 10 ;";
-  vector<string> x = Separar(cadenaDeTexto, ' ');
-
-  cout<<"tamanio de la cadena: "<<x.size()<<"\n";
-  
-  cout<<x[0]<<"\n";
-  cout<<x[1]<<"\n";
-  cout<<x[2]<<"\n";
-  cout<<x[3]<<"\n";
-  cout<<x[4]<<"\n";
-  cout<<x[5]<<"\n";
-  
+  std::ifstream file("code.txt");
+  if (file.is_open()) {
+    std::string line;
+    while (getline(file, line)) {
+        vector<string> x = Separar( line.c_str(), ' ');
+        for(int i=0; i<x.size() ; i++){
+  			cout<<x[i]<<"\n";
+  		}
+    }
+    file.close();
+  }else{
+  	cout<<"archivo no encontrado";
+  }
   return 0;
-}//main
+}
