@@ -4,7 +4,7 @@
 #include <iterator>
 
 using namespace std;
-
+/*con estas funciones soy capaz de transformar lineas de strings en palabras de strings en forma de vectores*/
 template<typename Out>
 void separar(const string &s, char delim, Out result) {
     stringstream ss(s);

@@ -12,7 +12,7 @@ int main (void){
 
   vector<string> algo;
   algo = CodeReader("code.txt");
-  
+  //recorriendo vector del archivo .txt
   for(int i= 0; i < algo.size() ; i++){
     cout<<algo[i]<<"\n";
   }//for

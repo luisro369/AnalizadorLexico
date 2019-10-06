@@ -6,12 +6,16 @@ using namespace std;
 // archivos necesarios
 #include "StringAnalyzer.h"
 
-//Lee archivos desde un .txt
+/*
+Con esta funcion soy capaz de leer archivos .txt
+- Transformalos a un vector de palabras linea por linea con la funcion Separar
+*/
+
 vector<string> CodeReader(string File){
-  vector<string> vectorDeArchivo;
   //variables
   vector<string> VectorDePalabras;
-  int i = 0;
+  vector<string> vectorDeArchivo;
+  
   ifstream file(File);
   
   if (file.is_open()) {
