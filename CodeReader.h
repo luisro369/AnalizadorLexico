@@ -29,7 +29,8 @@ vector<string> CodeReader(string File){
     return VectorDePalabras;
   }
   else{
-    vector<string> error = {"archivo no encontrado"};
+    vector<string> error;
+    error.push_back("Archivo no encontrado");
     return error;
   }
 }//CodeReader
