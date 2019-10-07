@@ -22,7 +22,7 @@ int main (void){
       cout<<"este elemento pertenece "<<algo[i]<<"\n";
       //funcion en manejador que obtiene el token correspondiente  
       tokenTemp = obtenerTokens(algo,i);
-      //funcion que avanza el carro una posicion y se encarga de validadr variables
+      //funcion que avanza el carro una posicion y se encarga de validar variables
       i = bloque(algo,tokenTemp,i);
     }//if
     else{
