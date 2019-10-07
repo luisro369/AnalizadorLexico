@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 
+using namespace std;
 
 //funcion que valida si la variable es solo de letras
 bool checkAlpha(string str){
