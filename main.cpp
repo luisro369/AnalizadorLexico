@@ -24,9 +24,10 @@ int main (void){
       tokenTemp = obtenerTokens(algo,i);
       //funcion que avanza el carro una posicion y se encarga de validadr variables
       i = bloque(algo,tokenTemp,i);
-    }else{//if
+    }//if
+    else{
         cout<<algo[i]<<"\n";
-    }
+    }//else
   }//for
   
   return 0;
