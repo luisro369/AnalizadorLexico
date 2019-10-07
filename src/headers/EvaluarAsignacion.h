@@ -5,6 +5,11 @@
 
 using namespace std;
 
+/*
+Con esta funcion puedo evaluar si la asignacion es la
+correcta aceptada por el lenguaje (:=)
+*/
+
 void evaluarAsignar(string variable){
     //validacion del caracter de asignación
     if(variable != ":="){

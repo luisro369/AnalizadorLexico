@@ -5,6 +5,11 @@
 
 using namespace std;
 
+/*
+Con esta funcion puedo evaluar si el tipo de la variable
+corresponde al tipo entero
+*/
+
 bool checkNumeric(string str){
     bool retVal;
     for(int i = 0; i < str.size()-1; i++){
@@ -22,9 +27,10 @@ bool checkNumeric(string str){
 }//checkNumeric
 
 
-
-
-
+/*
+Con esta funcion puedo evaluar si el tipo de la variable
+corresponde al tipo declarado por el usuario
+*/
 
 void evaluarValor(string variable,int token){
     //validacion del caracter ;
