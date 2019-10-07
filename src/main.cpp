@@ -4,9 +4,9 @@
 
 #include <algorithm>
 //archivos necesarios
-#include "Lexico.h"
-#include "CodeReader.h"
-#include "manejadorTokens.h"
+#include "headers/Lexico.h"
+#include "headers/CodeReader.h"
+#include "headers/manejadorTokens.h"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ int main (void){
 
   //generar el vector con los strings de cada palabra para ser analizados
   vector<string> algo;
-  algo = CodeReader("code.txt");
+  algo = CodeReader("../data/code.txt");
   int tokenTemp;
   //recorriendo vector del archivo .txt y viendo si son iguales
   for(int i= 0; i < algo.size() ; i++){
