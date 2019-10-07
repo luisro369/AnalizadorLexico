@@ -3,7 +3,8 @@
 #include <vector>
 #include <algorithm>
 //archivos necesarios
-# include "EvaluarVariable.h"
+#include "EvaluarVariable.h"
+#include "EvaluarAsignacion.h"
 using namespace std;
 
 
@@ -40,15 +41,7 @@ bool checkNumeric(string str){
 
 
 
-void evaluarAsignar(string variable){
-    //validacion del caracter de asignación
-    if(variable != ":="){
-        cout<<"Error en la validacion del identificador\n debe ser :=\n";
-        //mata el programa
-        exit(0);
-    }
-    
-}
+
 
 void evaluarValor(string variable,int token){
     //validacion del caracter ;
