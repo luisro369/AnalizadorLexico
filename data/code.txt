@@ -1,0 +1,8 @@
+ENT Variable := 10 ;
+BOOL Variable := VERDADERO ;
+
+SI Variable MAYOR Variable2 {
+RET ( Variable / Variable2 ) ;
+}
+
+ENT variable := "te cague! es una prueba" ;
