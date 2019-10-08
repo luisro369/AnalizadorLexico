@@ -38,5 +38,6 @@ void evaluarVariable(string variable){
         cout<<"la variable solo debe contener letras\n";
         exit(0);
     }
+    cout<<variable<<"  -------------------variable valida\n";
 }// evaluarVariable
 

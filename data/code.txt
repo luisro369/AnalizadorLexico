@@ -1,8 +1,9 @@
 ENT Variable := 10 ;
-BOOL Variable := VERDADERO ;
+BOOL Variablea := VERDADERO ;
 
-SI Variable MAYOR Variable2 {
-RET ( Variable / Variable2 ) ;
+SI ( Variable < Variablea ) {
+   BOOL Variableb := VERDADERO ;
 }
 
-ENT variable := "te cague! es una prueba" ;
+ENT variable := 34 ;
+FINCODIGO

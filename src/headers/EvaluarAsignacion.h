@@ -17,5 +17,5 @@ void evaluarAsignar(string variable){
       //mata el programa
       exit(0);
     }
-    
+    cout<<variable<<"  -------------------asignacion valida\n";    
 }//evaluarAsignar
