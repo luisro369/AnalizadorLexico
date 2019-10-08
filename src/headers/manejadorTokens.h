@@ -10,10 +10,10 @@ using namespace std;
 
 
 //funcion que obtiene el token
-int obtenerTokens(vector<string> algo,int posicion){
+int obtenerTokens(vector<string> algo,int posicion,vector<string> Lexico){
     //se recorre el arreglo de tokens hasta encontrar el correspondiente
-    for(int i = 0; i <= 32; i++){
-        if(algo[posicion] == TOKENS[i]){
+  for(int i = 0; i <= Lexico.size(); i++){
+        if(algo[posicion] == Lexico[i]){
             //se retorna la posicion del token
             return i;
         }

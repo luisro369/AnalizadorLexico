@@ -1,8 +1,19 @@
+INICIO
 ENT Variable := 10 ;
-BOOL Variable := VERDADERO ;
+BOOL Variablea < 10 > := VERDADERO ;
 
-SI Variable MAYOR Variable2 {
-RET ( Variable / Variable2 ) ;
+SI ( Variable < Variablea ) {
+BOOL Variableb := VERDADERO ;
 }
 
-ENT variable := "te cague! es una prueba" ;
+/#
+SI variable1 + variable2 = 37 ;
+SINO variable3 - variable4 = 40 ;
+
+#\
+
+SI variable5 * variable6 = 80;
+SINO variable7 / variable8 = 20;
+
+ENT variable := 34 ;
+FINCODIGO
