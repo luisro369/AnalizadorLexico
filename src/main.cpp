@@ -15,7 +15,7 @@ int main (void){
   //generar el vector con los strings de cada palabra para ser analizados
   vector<string> algo;
   algo = CodeReader("./data/code.txt");
-  int tokenTemp;
+  int tokenTemp,;
   //recorriendo vector del archivo .txt y viendo si son iguales
   for(int i= 0; i < algo.size() ; i++){
     //si el valor pertenece a un token
@@ -35,7 +35,6 @@ int main (void){
     }//if
     else{
       cout<<algo[i]<<" -----------> "<<" lexema "<<"\n";
-      evaluarVariable(algo[i]);
     }//else
   }//for
   
