@@ -4,20 +4,28 @@
 using namespace std;
 
 //declarando el vector con los tokens del lenguaje
-vector<string> TOKENS = {"CONTS","ENT","FLOT","CAR","CAD","BOOL","SI","SINO","IGUAL","MAYOR","PARA","MIENTRAS","HACER","LECT","ESCR","PROC","FUNC","DEV","DEF","DIM","ING","LEER","FINCODIGO","INICIO"};
+vector<string> TOKENS =
+{"CONTS","ENT","FLOT","CAR","CAD","BOOL","SI","SINO","PARA","MIENTRAS","HACER","LECT",
+"ESCR","PROC","FUNC","DEV","*DEF","*DIM","*ING","*LEER","FINCODIGO","INICIO","ABRIR","GUARDAR","CREAR"};
 
 
 //declarando el vector de tokens
-vector<string> TOKENST = {"constok","enttok","flotok","cartok","cadtok","booltok","sitok","sinotok","igualtok","mayortok","paratok","mientrastok","hacertok","lecttok","escrtok","proctok","functok","devtok","deftok","dimtok","ingtok","leertok","fincodigo","iniciocodigo"};
+vector<string> TOKENST = 
+{"constok","enttok","flotok","cartok","cadtok","booltok","sitok","sinotok","paratok","mientrastok","hacertok","lecttok",
+"escrtok","proctok","functok","devtok","deftok","dimtok","ingtok","leertok","fincodigo","iniciocodigo","abrirtok","guardartok","creartok"};
 
 //declarando el vector de caracteres aritmeticos del lenguaje
-vector<string> ARITM = {"%","^","*","-","=","+","/",":="};
+vector<string> ARITM = 
+{"%","^","*","-","+","/",":="};
 
 //declarando el vector de caracteres aritmeticos
-vector<string> ARITMT = {"op_mod","op_exp","op_mul","op_res","op_igual","op_sum","op_div","op_asig"};
+vector<string> ARITMT =
+ {"op_mod","op_exp","op_mul","op_res","op_sum","op_div","op_asig"};
 
 //declarando el vector de caracteres especiales del lenguaje
-vector<string> ESP = {"{","}","[","]","<",">","(",")","/#","#\\",";",","};
+vector<string> ESP = 
+{"{","}","[","]","<",">","==","(",")","/#","#\\",";",",","&&","||","'"};
 
 //declarando el vector de caracteres especiales 
-vector<string> ESPT = {"llave_a","llave_c","cor_a","cor_c","mayr","menr","pare_a","pare_c","comen_a","comen_c","puntcoma","coma"};
+vector<string> ESPT = 
+{"llave_a","llave_c","cor_a","cor_c","mayr","menr","igual","pare_a","pare_c","comen_a","comen_c","puntcoma","coma","olog","ylog","comilla"};

@@ -35,6 +35,7 @@ int main (void){
     }//if
     else{
       cout<<algo[i]<<" -----------> "<<" lexema "<<"\n";
+      evaluarVariable(algo[i]);
     }//else
   }//for
   

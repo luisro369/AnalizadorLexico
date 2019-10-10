@@ -34,6 +34,11 @@ corresponde al tipo declarado por el usuario
 
 void evaluarValor(string variable,int token){
     //validacion del caracter ;
+    cout<<variable;
+    if(variable.substr(variable.length()-1,variable.length()) == ";"){
+        variable = variable.substr(0,variable.length()-1);
+    }
+    cout<<" - "<<variable;
     switch(token){
         case 1:
                 if(checkNumeric(variable)){
