@@ -12,10 +12,14 @@ using namespace std;
 int main (void){
 
   //generar el vector con los strings de cada palabra para ser analizados
-  vector<string> algo;
+  vector<string> algo,algoAnalizado;
   algo = CodeReader("./data/code.txt");
-  AnalizadorLexicoGrafico(algo);
-  
+  algoAnalizado = AnalizadorLexicoGrafico(algo);
+  //for de prueba borrar todo esto
+  cout<<"ALGO ANALIZADO \n";
+  for(int i =0; i< algoAnalizado.size(); i++){
+    cout<<algoAnalizado[i]<<"\n";
+  }//for de prueba borrar
   return 0;
 }//main
 

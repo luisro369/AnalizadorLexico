@@ -24,7 +24,7 @@ vector<string> ARITMT =
 
 //declarando el vector de caracteres especiales del lenguaje
 vector<string> ESP = 
-{"{","}","[","]","<",">","==","(",")","/#","#\\",";",",","&&","||","'"};
+{"{","}","[","]",">","<","==","(",")","/#","#\\",";",",","&&","||","'"};
 
 //declarando el vector de caracteres especiales 
 vector<string> ESPT = 
