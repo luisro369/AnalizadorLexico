@@ -3,9 +3,9 @@
 #include <vector>
 #include <algorithm>
 //archivos necesarios
-#include "EvaluarVariable.h"
-#include "EvaluarAsignacion.h"
-#include "EvaluarTipoValor.h"
+//#include "EvaluarVariable.h"
+//#include "EvaluarAsignacion.h"
+//#include "EvaluarTipoValor.h"
 using namespace std;
 
 
@@ -22,7 +22,7 @@ int obtenerTokens(vector<string> algo,int posicion,vector<string> Lexico){
 }//obtener tokens
 
 
-
+/*
 //funcion que manejara el flujo
 int bloque(vector<string> algo,int token,int posicion){
     //verifica si el token esta entre 1 y 5 porque son las de los tipo de datos
@@ -39,5 +39,5 @@ int bloque(vector<string> algo,int token,int posicion){
     //se retorna la nueva posicion de lectura
     return posicion;
 }//bloque
-
+*/
 
