@@ -1,19 +1,41 @@
 INICIO
 ENT Variable := 10 ;
-BOOL Variablea < 10 > := VERDADERO ;
+ENT Variableb := 12 ;
+CAD Respuesta := "" ;
+BOOL Variablellegoellecherooooo := VERDADERO ;
 
-SI ( Variable < Variablea ) {
-BOOL Variableb := VERDADERO ;
+SI ( Variable < Variable2 ) {
+    Respuesta := "es mayor";
+    RET Respuesta;
 }
 
-/#
-SI variable1 + variable2 = 37 ;
-SINO variable3 - variable4 = 40 ;
+PARA ( 0 , 10 , 2 ) {
+    Respuesta := "es mayor";
+    RET Respuesta;
+}
 
-#\
+LECT ( Respuesta ) ;
+ESCR ( Respuesta ) ;
+ESCR ( ' yo tengo mucho que decir ' ) ;
 
-SI variable5 * variable6 = 80 ;
-SINO variable7 / variable8 = 20 ;
+CREAR ( c:/user/teo/lexicografico/cosa.txt ) ;
+ABRIR ( c:/user/teo/lexicografico/cosa.txt ) ;
+GUARDAR ( c:/user/teo/lexicografico/cosa.txt ) ;
 
-ENT variable := 34 ;
+PROC proceso ( parametro ) {
+    ABRIR ( c:/user/teo/lexicografico/cosa.txt ) ;
+    GUARDAR ( c:/user/teo/lexicografico/cosa.txt ) ;
+}
+
+FUNC proceso ( parametro ) {
+    ABRIR ( c:/user/teo/lexicografico/cosa.txt ) ;
+    GUARDAR ( c:/user/teo/lexicografico/cosa.txt ) ;
+    DEV variable ;
+}
+
+*DEF ENT arreglo ;
+*DIM arreglo 8 ;
+*ING arreglo variable 6 ;
+*LEER arreglo 5 ;
+
 FINCODIGO

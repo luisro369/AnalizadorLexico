@@ -6,6 +6,7 @@
 //archivos necesarios
 #include "headers/CodeReader.h"
 #include "headers/analizador_lexicografico/lexicoGrafico.h"
+#include "headers/AnalizadorSintactico.h"
 
 using namespace std;
 
@@ -20,6 +21,7 @@ int main (void){
   for(int i =0; i< algoAnalizado.size(); i++){
     cout<<algoAnalizado[i]<<"\n";
   }//for de prueba borrar
+  AnalizadorSintactico(algoAnalizado);
   return 0;
 }//main
 
