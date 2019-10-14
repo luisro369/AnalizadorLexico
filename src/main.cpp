@@ -18,7 +18,7 @@ int main (void){
   algoAnalizado = AnalizadorLexicoGrafico(algo);
   
   //for de prueba borrar todo esto
-  cout<<"ALGO ANALIZADO \n";
+  cout<<"====================ALGO ANALIZADO====================== \n";
   for(int i =0; i< algoAnalizado.size(); i++){
     cout<<algoAnalizado[i]<<"\n";
   }//for de prueba borrar
