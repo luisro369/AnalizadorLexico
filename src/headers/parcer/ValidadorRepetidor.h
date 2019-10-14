@@ -14,7 +14,7 @@ int validadorRepetidor(vector<string> VSin, int pos){
             //todobien
             cout<<"PARENTESIS QUE INDICA INICIO DE CONDICION---SINTACTICO\n";
             pos = pos+1;
-                if(VSin[pos] == "lexema"){
+                if(VSin[pos] == "NUM"){
                 //todo bien
                 cout<<"NUMERO QUE INDICA EL INCIO DEL REPETIDOR----SINTACTICO\n";
                 pos = pos+1;
@@ -22,7 +22,7 @@ int validadorRepetidor(vector<string> VSin, int pos){
                     //todobien
                     cout<<"SIMBOLO DE SEPARADOR------------------------SINTACTICO\n";
                     pos = pos+1;
-                    if(VSin[pos] == "lexema"){
+                    if(VSin[pos] == "NUM"){
                         //todo bien
                         cout<<"NUMERO QUE INDICA EL LIMITE DEL REPETIDOR---SINTACTICO\n";
                         pos = pos+1;
@@ -30,7 +30,7 @@ int validadorRepetidor(vector<string> VSin, int pos){
                             //todobien
                             cout<<"SIMBOLO DE SEPARADOR------------------------SINTACTICO\n";
                             pos = pos+1;
-                            if(VSin[pos] == "lexema"){
+                            if(VSin[pos] == "NUM"){
                                 //todo bien
                                 cout<<"NUMERO QUE INDICA EL PASO DEL REPETIDOR-----SINTACTICO\n";
                                 pos = pos+1;

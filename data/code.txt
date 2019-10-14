@@ -1,17 +1,18 @@
 INICIO
 ENT Variable := 10 ;
-ENT Variableb := 12 ;
-CAD Respuesta := "" ;
-BOOL Variablellegoellecherooooo := VERDADERO ;
+FLOT Variable := 12.9 ;
+CAD cadena := "cadenaDeCaracteres" ;
+CAR Respuesta := 'a' ;
+BOOL Varo := VERDADERO ;
 
-SI ( Variable < Variable2 ) {
-    Respuesta := "es mayor";
-    RET Respuesta;
+SI ( Variable < Variable ) {
+Respuesta := "es mayor";
+RET Respuesta;
 }
 
 PARA ( 0 , 10 , 2 ) {
-    Respuesta := "es mayor";
-    RET Respuesta;
+Respuesta := "es mayor";
+RET Respuesta;
 }
 
 LECT ( Respuesta ) ;
@@ -23,14 +24,14 @@ ABRIR ( c:/user/teo/lexicografico/cosa.txt ) ;
 GUARDAR ( c:/user/teo/lexicografico/cosa.txt ) ;
 
 PROC proceso ( parametro ) {
-    ABRIR ( c:/user/teo/lexicografico/cosa.txt ) ;
-    GUARDAR ( c:/user/teo/lexicografico/cosa.txt ) ;
+ABRIR ( c:/user/teo/lexicografico/cosa.txt ) ;
+GUARDAR ( c:/user/teo/lexicografico/cosa.txt ) ;
 }
 
 FUNC proceso ( parametro ) {
-    ABRIR ( c:/user/teo/lexicografico/cosa.txt ) ;
-    GUARDAR ( c:/user/teo/lexicografico/cosa.txt ) ;
-    DEV variable ;
+ABRIR ( c:/user/teo/lexicografico/cosa.txt ) ;
+GUARDAR ( c:/user/teo/lexicografico/cosa.txt ) ;
+DEV variable ;
 }
 
 *DEF ENT arreglo ;

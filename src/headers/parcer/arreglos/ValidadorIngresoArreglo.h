@@ -10,14 +10,14 @@ int validadorIngArreglo(vector<string> VSin, int pos){
          //Indicador de ingreso de arreglo
         cout<<"INDICADOR INSERCION DE ARREGLO--------------SINTACTICO\n";
         pos = pos+1;
-        if(VSin[pos] == "lexema"){
+        if(VSin[pos] == "VAR"){
             cout<<"ARREGLO A INGRESAR DATOS--------------------SINTACTICO\n";
             pos = pos+1;
-            if(VSin[pos] == "lexema"){
+            if(VSin[pos] == "VAR"){
                 //todo bien
                 cout<<"VARIABLE A INGRESAR EN EL ARREGLO-----------SINTACTICO\n";
                 pos = pos+1;
-                 if(VSin[pos] == "lexema"){
+                 if(VSin[pos] == "NUM"){
                     //todo bien
                     cout<<"POSICION DEL ARREGLO A INGRESAR-------------SINTACTICO\n";
                     pos = pos+1;

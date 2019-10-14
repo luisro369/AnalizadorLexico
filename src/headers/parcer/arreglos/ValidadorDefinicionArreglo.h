@@ -13,7 +13,7 @@ int validadorDefArreglo(vector<string> VSin, int pos){
         if(VSin[pos] == TOKENST[1] || VSin[pos] == TOKENST[2] || VSin[pos] == TOKENST[3] || VSin[pos] == TOKENST[4] || VSin[pos] == TOKENST[5]){
             cout<<"INDICADOR DEL TIPO DEL ARREGLO--------------SINTACTICO\n";
             pos = pos+1;
-            if(VSin[pos] == "lexema"){
+            if(VSin[pos] == "VAR"){
                 //todo bien
                 cout<<"NOMBRE DE ARREGLO---------------------------SINTACTICO\n";
                 pos = pos+1;

@@ -10,10 +10,10 @@ int validadorLeerArreglo(vector<string> VSin, int pos){
          //Indicador de lectura de arreglo
         cout<<"INDICADOR LECTRUA DE ARREGLO----------------SINTACTICO\n";
         pos = pos+1;
-        if(VSin[pos] == "lexema"){
+        if(VSin[pos] == "VAR"){
             cout<<"ARREGLO A LEER------------------------------SINTACTICO\n";
             pos = pos+1;
-            if(VSin[pos] == "lexema"){
+            if(VSin[pos] == "NUM"){
                 //todo bien
                 cout<<"POSICION DEL ARREGLO AL LEER----------------SINTACTICO\n";
                 pos = pos+1;

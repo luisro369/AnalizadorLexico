@@ -10,10 +10,10 @@ int validadorDimArreglo(vector<string> VSin, int pos){
          //Indicador de definicion de arreglo
         cout<<"INDICADOR DIMENSION DE ARREGLO--------------SINTACTICO\n";
         pos = pos+1;
-        if(VSin[pos] == "lexema"){
+        if(VSin[pos] == "VAR"){
             cout<<"ARREGLO A DIMESIONAR------------------------SINTACTICO\n";
             pos = pos+1;
-            if(VSin[pos] == "lexema"){
+            if(VSin[pos] == "NUM"){
                 //todo bien
                 cout<<"DIMENSION DEL ARREGLO-----------------------SINTACTICO\n";
                 pos = pos+1;

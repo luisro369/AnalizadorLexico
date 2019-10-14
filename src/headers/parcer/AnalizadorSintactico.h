@@ -22,7 +22,7 @@ int validadorProceso(vector<string> VSin, int pos){
          //Indicador de repetidor
         cout<<"INDICADOR INICIO DE PROCESO-----------------SINTACTICO\n";
         pos = pos+1;
-        if(VSin[pos] == "lexema"){
+        if(VSin[pos] == "VAR"){
             //todo bien
             cout<<"NOMBRE DE PROCESO---------------------------SINTACTICO\n";
             pos = pos+1;
@@ -30,7 +30,7 @@ int validadorProceso(vector<string> VSin, int pos){
                 //todobien
                 cout<<"PARENTESIS QUE INDICA INICIO DE PARAMETRO---SINTACTICO\n";
                 pos = pos+1;
-                if(VSin[pos] == "lexema"){
+                if(VSin[pos] == "VAR"){
                     //todo bien
                     cout<<"PARAMETRO DE PROCESO------------------------SINTACTICO\n";
                     pos = pos+1;

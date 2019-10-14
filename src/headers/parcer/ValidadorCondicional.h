@@ -14,7 +14,7 @@ int validadorCondicional(vector<string> VSin, int pos){
         //todobien
         cout<<"PARENTESIS QUE INDICA INICIO DE CONDICION---SINTACTICO\n";
         pos = pos+1;
-            if(VSin[pos] == "lexema"){
+            if(VSin[pos] == "VAR"){
                 //todo bien
                 cout<<"LLAMADA A UNA VARIABLE CORRECTA-------------SINTACTICO\n";
                 pos = pos+1;
@@ -22,7 +22,7 @@ int validadorCondicional(vector<string> VSin, int pos){
                     //todo bien
                     cout<<"SIMBOLO DE COMPARACION----------------------SINTACTICO\n";
                     pos = pos+1;
-                    if(VSin[pos] == "lexema"){
+                    if(VSin[pos] == "VAR"){
                        //todo bien
                        cout<<"LLAMADA A UNA VARIABLE CORRECTA-------------SINTACTICO\n";
                        pos = pos+1;

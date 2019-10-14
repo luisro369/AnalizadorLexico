@@ -10,7 +10,7 @@ int validadorFuncion(vector<string> VSin, int pos){
          //Indicador de repetidor
         cout<<"INDICADOR INICIO DE FUNCION-----------------SINTACTICO\n";
         pos = pos+1;
-        if(VSin[pos] == "lexema"){
+        if(VSin[pos] == "VAR"){
             //todo bien
             cout<<"NOMBRE DE FUNCION---------------------------SINTACTICO\n";
             pos = pos+1;
@@ -18,7 +18,7 @@ int validadorFuncion(vector<string> VSin, int pos){
                 //todobien
                 cout<<"PARENTESIS QUE INDICA INICIO DE PARAMETRO---SINTACTICO\n";
                 pos = pos+1;
-                if(VSin[pos] == "lexema"){
+                if(VSin[pos] == "VAR"){
                     //todo bien
                     cout<<"PARAMETRO DE FUNCION------------------------SINTACTICO\n";
                     pos = pos+1;
@@ -36,7 +36,7 @@ int validadorFuncion(vector<string> VSin, int pos){
                             }
                             cout<<"INDICADOR DE RETORNO DE FUNCION-------------SINTACTICO\n";
                             pos=pos+1;   
-                            if(VSin[pos] == "lexema"){
+                            if(VSin[pos] == "VAR"){
                                 //todo bien
                                 cout<<"VARIABLE DE RETONRO-------------------------SINTACTICO\n";
                                 pos = pos+1;

@@ -14,7 +14,7 @@ int validadorLectura(vector<string> VSin, int pos){
             //todobien
             cout<<"PARENTESIS QUE INDICA INICIO DE LECTURA-----SINTACTICO\n";
             pos = pos+1;
-                if(VSin[pos] == "lexema"){
+                if(VSin[pos] == "VAR"){
                 //todo bien
                 cout<<"VARIABLE A ASIGNAR LA LECTURA---------------SINTACTICO\n";
                 pos = pos+1;
