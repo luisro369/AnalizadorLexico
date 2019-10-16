@@ -13,16 +13,16 @@ using namespace std;
 int main (void){
 
   //generar el vector con los strings de cada palabra para ser analizados
-  vector<string> algo,algoAnalizado;
-  algo = CodeReader("./data/code.txt");
-  algoAnalizado = AnalizadorLexicoGrafico(algo);
+  vector<string> vectorPalabras,vectorPalabrasAnalizadas;
+  vectorPalabras = CodeReader("./data/code.txt");
+  vectorPalabrasAnalizadas = AnalizadorLexicoGrafico(vectorPalabras);
   
   //for de prueba borrar todo esto
-  cout<<"====================ALGO ANALIZADO====================== \n";
-  for(int i =0; i< algoAnalizado.size(); i++){
-    cout<<algoAnalizado[i]<<"\n";
+  cout<<"====================PALABRAS ANALIZADAS============ \n";
+  for(int i =0; i< vectorPalabrasAnalizadas.size(); i++){
+    cout<<vectorPalabrasAnalizadas[i]<<"\n";
   }//for de prueba borrar
   
-  AnalizadorSintactico(algoAnalizado);
+  AnalizadorSintactico(vectorPalabrasAnalizadas);
   return 0;
 }//main

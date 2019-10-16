@@ -65,73 +65,73 @@ bool isDecimal(string str){
     return retVal;
 }//checkNumeric
 
-vector<string> analizadorVariablesDatos(vector<string> algoAnalizado, string lexema){
+vector<string> analizadorVariablesDatos(vector<string> vectorPalabrasAnalizadas, string lexema){
     if(lexema.length() == 3 && lexema.substr(0,1) == "'" && lexema.substr(2,2) == "'" && !(checkAlpha(lexema.substr(1,1)))){
         cout<<lexema<<" -----------> "<<" LET "<<"\n";
-        algoAnalizado.push_back("LET");
+        vectorPalabrasAnalizadas.push_back("LET");
     }else{
         if(lexema == "VERDADERO" || lexema == "FALSO"){
             cout<<lexema<<" -----------> "<<" LOG "<<"\n";
-            algoAnalizado.push_back("LOG");
+            vectorPalabrasAnalizadas.push_back("LOG");
         }else{
             if(lexema.length() <= 15 && lexema.substr(0,1) != "'" && lexema.substr(0,1) != "\"" && lexema.substr(lexema.length()-1,lexema.length()-1) != "'" &&
                  lexema.substr(lexema.length()-1,lexema.length()-1) != "\"" && !(checkAlpha(lexema))){
                  cout<<lexema<<" -----------> "<<" VAR "<<"\n";
-                 algoAnalizado.push_back("VAR");
+                 vectorPalabrasAnalizadas.push_back("VAR");
             }else{
                 if(lexema.length() <= 4 && !(checkNumeric(lexema))){
                     cout<<lexema<<" -----------> "<<" NUM "<<"\n";
-                    algoAnalizado.push_back("NUM");
+                    vectorPalabrasAnalizadas.push_back("NUM");
                 }else{
                     if(lexema.length() >= 3 && lexema.substr(0,1) == "\"" && lexema.substr(lexema.length()-1,lexema.length()-1) == "\"" && !checkAlpha(lexema.substr(1,lexema.length()-2))){
                         cout<<lexema<<" -----------> "<<" PAL "<<"\n";
-                        algoAnalizado.push_back("PAL");
+                        vectorPalabrasAnalizadas.push_back("PAL");
                     }else{
                         if(lexema.length() <= 9 && !(isDecimal(lexema))){
                              cout<<lexema<<" -----------> "<<" DEC "<<"\n";
-                             algoAnalizado.push_back("DEC");
+                             vectorPalabrasAnalizadas.push_back("DEC");
                         }else{
                             cout<<lexema<<" -----------> "<<" lexema "<<"\n";
-                            algoAnalizado.push_back("lexema");
+                            vectorPalabrasAnalizadas.push_back("lexema");
                         }
                     }
                 }
             }
         }
     }
-    return algoAnalizado;    
+    return vectorPalabrasAnalizadas;    
 }
 
-vector<string> AnalizadorLexicoGrafico(vector<string> algo){
-  vector<string> algoAnalizado;
+vector<string> AnalizadorLexicoGrafico(vector<string> vectorPalabras){
+  vector<string> vectorPalabrasAnalizadas;
   int posTok,posAritm,posEsp,posLex;
   //recorriendo vector del archivo .txt y viendo si son iguales
-  for(int i= 0; i < algo.size() ; i++){
+  for(int i= 0; i < vectorPalabras.size() ; i++){
     //si el valor pertenece a un token
-    if(find(TOKENS.begin(), TOKENS.end(), algo[i]) != TOKENS.end()){
-      posTok = obtenerTokens(algo,i,TOKENS);
-      cout<<algo[i]<<" -----------> "<<TOKENST[posTok]<<"\n";
-      algoAnalizado.push_back(TOKENST[posTok]);
+    if(find(TOKENS.begin(), TOKENS.end(), vectorPalabras[i]) != TOKENS.end()){
+      posTok = obtenerTokens(vectorPalabras,i,TOKENS);
+      cout<<vectorPalabras[i]<<" -----------> "<<TOKENST[posTok]<<"\n";
+      vectorPalabrasAnalizadas.push_back(TOKENST[posTok]);
       continue;
     }//if
     //si el valor pertenece a un caracter aritmetico
-    if(find(ARITM.begin(), ARITM.end(), algo[i]) != ARITM.end()){
-      posAritm = obtenerTokens(algo,i,ARITM);
-      cout<<algo[i]<<" -----------> "<<ARITMT[posAritm]<<"\n";
-      algoAnalizado.push_back(ARITMT[posAritm]);
+    if(find(ARITM.begin(), ARITM.end(), vectorPalabras[i]) != ARITM.end()){
+      posAritm = obtenerTokens(vectorPalabras,i,ARITM);
+      cout<<vectorPalabras[i]<<" -----------> "<<ARITMT[posAritm]<<"\n";
+      vectorPalabrasAnalizadas.push_back(ARITMT[posAritm]);
       continue;
     }//if
     //si el valor pertenece a un caracter especial
-    if(find(ESP.begin(), ESP.end(), algo[i]) != ESP.end()){
-      posEsp = obtenerTokens(algo,i,ESP);
-      cout<<algo[i]<<" -----------> "<<ESPT[posEsp]<<"\n";
-      algoAnalizado.push_back(ESPT[posEsp]);
+    if(find(ESP.begin(), ESP.end(), vectorPalabras[i]) != ESP.end()){
+      posEsp = obtenerTokens(vectorPalabras,i,ESP);
+      cout<<vectorPalabras[i]<<" -----------> "<<ESPT[posEsp]<<"\n";
+      vectorPalabrasAnalizadas.push_back(ESPT[posEsp]);
       continue;
     }//if
     else{
-      algoAnalizado = analizadorVariablesDatos(algoAnalizado,algo[i]);  
+      vectorPalabrasAnalizadas = analizadorVariablesDatos(vectorPalabrasAnalizadas,vectorPalabras[i]);  
     }//else
   }//for
   
-  return algoAnalizado;
+  return vectorPalabrasAnalizadas;
 }//AnalizadorLexicoGrafico

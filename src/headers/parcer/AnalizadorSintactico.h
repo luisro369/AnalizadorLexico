@@ -79,23 +79,23 @@ int validadorProceso(vector<string> VSin, int pos){
 
 
 //funcion que manejara el flujo
-void AnalizadorSintactico(vector<string> algoAnalizado){
+void AnalizadorSintactico(vector<string> vectorPalabrasAnalizadas){
   cout<<"=========================ANALIZADOR SINTACTICO========================\n";
-  validadorInicioFin(algoAnalizado);
+  validadorInicioFin(vectorPalabrasAnalizadas);
   //for para recorrer el vector de tokens y lexemas analizados
-  for(int pos=1; pos<algoAnalizado.size()-2;pos++){
-    pos = validadorAsignacion(algoAnalizado,pos);//
-    pos = validadorCondicional(algoAnalizado,pos);//
-    pos = validadorRepetidor(algoAnalizado,pos);//
-    pos = validadorLectura(algoAnalizado,pos);//
-    pos = validadorEscritura(algoAnalizado,pos);//
-    pos = validadorManejoArchivos(algoAnalizado,pos);//
-    pos = validadorProceso(algoAnalizado,pos);//
-    pos = validadorFuncion(algoAnalizado,pos);//
-    pos = validadorDefArreglo(algoAnalizado,pos);//
-    pos = validadorDimArreglo(algoAnalizado,pos);//
-    pos = validadorIngArreglo(algoAnalizado,pos);//
-    pos = validadorLeerArreglo(algoAnalizado,pos);//    
+  for(int pos=1; pos<vectorPalabrasAnalizadas.size()-2;pos++){
+    pos = validadorAsignacion(vectorPalabrasAnalizadas,pos);//
+    pos = validadorCondicional(vectorPalabrasAnalizadas,pos);//
+    pos = validadorRepetidor(vectorPalabrasAnalizadas,pos);//
+    pos = validadorLectura(vectorPalabrasAnalizadas,pos);//
+    pos = validadorEscritura(vectorPalabrasAnalizadas,pos);//
+    pos = validadorManejoArchivos(vectorPalabrasAnalizadas,pos);//
+    pos = validadorProceso(vectorPalabrasAnalizadas,pos);//
+    pos = validadorFuncion(vectorPalabrasAnalizadas,pos);//
+    pos = validadorDefArreglo(vectorPalabrasAnalizadas,pos);//
+    pos = validadorDimArreglo(vectorPalabrasAnalizadas,pos);//
+    pos = validadorIngArreglo(vectorPalabrasAnalizadas,pos);//
+    pos = validadorLeerArreglo(vectorPalabrasAnalizadas,pos);//    
   }
   cout<<"=========================GRACIAS POR USAR AGORA=======================\n";
 }//Analizador sintactico
