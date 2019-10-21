@@ -29,3 +29,4 @@ vector<string> ESP =
 //declarando el vector de caracteres especiales 
 vector<string> ESPT = 
 {"llave_a","llave_c","cor_a","cor_c","mayr","menr","igual","pare_a","pare_c","comen_a","comen_c","puntcoma","coma","olog","ylog","comilla"};
+

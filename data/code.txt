@@ -1,5 +1,5 @@
 INICIO
-ENT Variable := 12 ;
+ENT Variable:=12;
 FLOT Variable := 12.5 ;
 CAD cadena := "cadenaDeCaracteres" ;
 CAR Respuesta := 'a' ;
