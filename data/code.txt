@@ -1,13 +1,13 @@
 INICIO
 ENT Variable:=12;
 INT numero:=(2+2);
-FLOT Variable := 12.5;
-CAD cadena := "cadenaDeCaracteres" ;
-CAR Respuesta := 'a' ;
-BOOL Varo := VERDADERO ;
+FLOT Variable:=12.5;
+CAD cadena:="cadenaDeCaracteres";
+CAR Respuesta:='a';
+BOOL Varo:=VERDADERO;
 
-SI (Variable<Variable){
-Respuesta := "esmayor"
+SI(Variable<Variable){
+Respuesta:="esmayor";
 DEV Respuesta;
 }
 
