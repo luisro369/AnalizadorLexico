@@ -74,22 +74,22 @@ int validadorAsignacion(vector<string> VSin, int pos){
                         cout<<"SIMBOLO DE FIN DE LINEA CORRECTA------------SINTACTICO\n";
                     }else{
                         //se muere
-                        cout<<"ERROR: se esperaba simbolo de fin de linea ';'\n";
+                        cout<<ERRORES[9];
                         exit(0);
                     }
                 }else{
                     //se muere
-                    cout<<"ERROR: valor no corresponde con tipo de dato\n";
+                    cout<<ERRORES[10];
                     exit(0);
                 }
             }else{
                 //se muere
-                cout<<"ERROR: se esperaba simbolo de asignacion ':='\n"; 
+                cout<<ERRORES[11]; 
                 exit(0);
             }
         }else{
             //se muere
-            cout<<"ERROR: se esperaba un nombre para la asginacion de la varible\n"; 
+            cout<<ERRORES[12]; 
             exit(0);
         }
     }

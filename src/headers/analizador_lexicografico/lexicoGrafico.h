@@ -6,6 +6,7 @@
 //archivos necesarios
 #include "Lexico.h"
 #include "manejadorTokens.h"
+#include "Errores.h"
 
 //funcion que valida si la variable es solo de letras
 bool checkAlpha(string str){

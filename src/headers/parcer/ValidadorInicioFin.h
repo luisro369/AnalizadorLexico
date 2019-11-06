@@ -12,7 +12,7 @@ void validadorInicioFin(vector<string> vectorPalabrasAnalizadas){
        cout<<"INICIO DE CODIGO CORRECTO-------------------SINTACTICO\n";
     }else{
         //se muere 
-        cout<<"El codigo debe iniciar con la palabra reservada 'INICIO'\n";
+        cout<<ERRORES[0];
         exit(0);
     }//ifelse
     //verificando que el final del codigo contenga la palabra reservada adecuada
@@ -21,7 +21,7 @@ void validadorInicioFin(vector<string> vectorPalabrasAnalizadas){
         cout<<"FIN DE CODIGO CORRECTO----------------------SINTACTICO\n";
     }else{
         //se muere 
-        cout<<"El codigo debe finalizar con la palabra reservada 'FINCODIGO'\n";
+        cout<<ERRORES[1];
         exit(0);
     }//ifelse
 }//validadorInicioFin

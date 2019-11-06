@@ -49,7 +49,7 @@ int validadorProceso(vector<string> VSin, int pos){
                             cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
                         }else{
                         //se muere
-                        cout<<"ERROR: se esperaba simbolo de incio de subcodigo '{'\n";
+                        cout<<ERRORES[3];
                         exit(0);
                         }
                     }else{
