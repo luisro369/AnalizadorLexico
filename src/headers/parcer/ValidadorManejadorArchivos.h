@@ -43,7 +43,7 @@ int validadorManejoArchivos(vector<string> VSin, int pos){
             }
         }else{
             //se muere
-            cout<<[6];
+            cout<<ERRORES[6];
             exit(0);
         }    
     }    

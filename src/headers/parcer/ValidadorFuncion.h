@@ -49,8 +49,8 @@ int validadorFuncion(vector<string> VSin, int pos){
                                         cout<<"CORCHETE QUE INDICA FIN DE SUBCODIGO--------SINTACTICO\n";
                                     }else{
                                         //se muere
-                                        cout<<;
-                                        exit(0);ERRORES[13]
+                                        cout<<ERRORES[13];
+                                        exit(0);
                                     }
                                 }else{
                                     //se muere
