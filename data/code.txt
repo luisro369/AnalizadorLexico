@@ -1,4 +1,4 @@
-INICIO
+INICI
 ENT Variable := 12 ;
 FLOT Variable := 12.5 ;
 CAD cadena := "cadenaDeCaracteres" ;

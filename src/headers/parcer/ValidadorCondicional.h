@@ -41,32 +41,32 @@ int validadorCondicional(vector<string> VSin, int pos){
                                 cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
                             }else{
                             //se muere
-                            cout<<"ERROR: se esperaba simbolo de incio de subcodigo '{'\n";
+                            cout<<ERRORES[2];
                             exit(0);
                             }
                         }else{
                         //se muere
-                        cout<<"ERROR: se esperaba simbolo de fin de codicion ')'\n";
+                        cout<<ERRORES[3];
                         exit(0);
                         }
                     }else{
                     //se muere
-                    cout<<"ERROR: se esperaba una variable\n";
+                    cout<<ERRORES[4];
                     exit(0);
                     }
                 }else{
                 //se muere
-                cout<<"ERROR: se esperaba simbolo de comparacion '<','>','=='\n";
+                cout<<ERRORES[5];
                 exit(0);
                 }
             }else{
             //se muere
-            cout<<"ERROR: se esperaba una variable\n";
+            cout<<ERRORES[4];
             exit(0);
             }
         }else{
         //se muere
-        cout<<"ERROR: se esperaba simbolo de inicio de condicion '('\n";
+        cout<<ERRORES[6];
         exit(0);
         }
     }

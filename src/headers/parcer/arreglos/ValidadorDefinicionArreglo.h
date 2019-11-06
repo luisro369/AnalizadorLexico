@@ -22,17 +22,17 @@ int validadorDefArreglo(vector<string> VSin, int pos){
                     cout<<"SIMBOLO DE FIN DE LINEA CORRECTA------------SINTACTICO\n";
                 }else{
                     //se muere
-                    cout<<"ERROR: se esperaba simbolo de fin de linea ';'\n";
+                    cout<<ERRORES[9];
                     exit(0);
                 }
             }else{
                 //se muere
-                cout<<"ERROR: se esperaba un nombre para asignar al arreglo\n";
+                cout<<ERRORES[18];
                 exit(0);
             }   
         }else{
             //se muere
-            cout<<"ERROR: se esperaba un tipo de dato valido para el arreglo 'ENT', 'FLOT','CAD','CAR','BOOL'\n";
+            cout<<ERRORES[19];
             exit(0);
         }
     }

@@ -22,17 +22,17 @@ int validadorDimArreglo(vector<string> VSin, int pos){
                     cout<<"SIMBOLO DE FIN DE LINEA CORRECTA------------SINTACTICO\n";
                 }else{
                     //se muere
-                    cout<<"ERROR: se esperaba simbolo de fin de linea ';'\n";
+                    cout<<ERRORES[9];
                     exit(0);
                 }
             }else{
                 //se muere
-                cout<<"ERROR: se esperaba un numero para la dimsion del arreglo\n";
+                cout<<ERRORES[20];
                 exit(0);
             }   
         }else{
             //se muere
-            cout<<"ERROR: se esperaba una variable arreglo\n";
+            cout<<ERRORES[21];
             exit(0);
         }
     }

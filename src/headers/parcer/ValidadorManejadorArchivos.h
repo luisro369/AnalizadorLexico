@@ -28,22 +28,22 @@ int validadorManejoArchivos(vector<string> VSin, int pos){
                         pos;
                     }else{
                         //se muere
-                        cout<<"ERROR: se esperaba simbolo de fin de linea ';'\n";
+                        cout<<ERRORES[9];
                         exit(0);
                     }
                 }else{
                     //se muere
-                    cout<<"ERROR: se esperaba simbolo de fin de archivo ')'\n";
+                    cout<<ERRORES[3];
                     exit(0);
                 }
             }else{
                 //se muere
-                cout<<"ERROR: se esperaba una ruta al archivo\n";
+                cout<<ERRORES[17];
                 exit(0);
             }
         }else{
             //se muere
-            cout<<"ERROR: se esperaba simbolo de incio de archivo '('\n";
+            cout<<[6];
             exit(0);
         }    
     }    

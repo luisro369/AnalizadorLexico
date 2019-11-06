@@ -28,22 +28,22 @@ int validadorLectura(vector<string> VSin, int pos){
                         pos;
                     }else{
                         //se muere
-                        cout<<"ERROR: se esperaba simbolo de fin de linea ';'\n";
+                        cout<<ERRORES[9];
                         exit(0);
                     }
                 }else{
                     //se muere
-                    cout<<"ERROR: se esperaba simbolo de fin de lectura ')'\n";
+                    cout<<ERRORES[3];
                     exit(0);
                 }
             }else{
                 //se muere
-                cout<<"ERROR: se esperaba una variable asiganble\n";
+                cout<<ERRORES[4];
                 exit(0);
             }
         }else{
             //se muere
-            cout<<"ERROR: se esperaba simbolo de incio de lectura '('\n";
+            cout<<ERRORES[6];
             exit(0);
         }
     }

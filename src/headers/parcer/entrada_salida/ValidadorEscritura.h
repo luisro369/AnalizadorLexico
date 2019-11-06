@@ -28,12 +28,12 @@ int validadorEscritura(vector<string> VSin, int pos){
                         pos;
                     }else{
                         //se muere
-                        cout<<"ERROR: se esperaba simbolo de fin de linea ';'\n";
+                        cout<<ERRORES[9];
                         exit(0);
                     }
                 }else{
                     //se muere
-                    cout<<"ERROR: se esperaba simbolo de fin de escritura ')'\n";
+                    cout<<ERRORES[3];
                     exit(0);
                 }
             }else{
@@ -50,7 +50,7 @@ int validadorEscritura(vector<string> VSin, int pos){
             }
         }else{
             //se muere
-            cout<<"ERROR: se esperaba simbolo de incio de escritura '('\n";
+            cout<<ERRORES[6];
             exit(0);
         }
     }

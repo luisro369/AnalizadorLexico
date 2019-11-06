@@ -49,42 +49,42 @@ int validadorRepetidor(vector<string> VSin, int pos){
                                         cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
                                     }else{
                                     //se muere
-                                    cout<<"ERROR: se esperaba simbolo de incio de subcodigo '{'\n";
+                                    cout<<ERRORES[3];
                                     exit(0);
                                     }
                                 }else{
                                 //se muere
-                                cout<<"ERROR: se esperaba simbolo de fin de codicion ')'\n";
+                                cout<<ERRORES[4];
                                 exit(0);
                                 }
                             }else{
                             //se muere
-                            cout<<"ERROR: se esperaba un numero\n";
+                            cout<<ERRORES[6];
                             exit(0);
                             }
                         }else{
                         //se muere
-                        cout<<"ERROR: se esperaba un simbolo de separacion ','\n";
+                        cout<<ERRORES[7];
                         exit(0);
                         }
                     }else{
                     //se muere
-                    cout<<"ERROR: se esperaba un numero\n";
+                    cout<<ERRORES[6];
                     exit(0);
                     }
                 }else{
                 //se muere
-                cout<<"ERROR: se esperaba un simbolo de separacion ','\n";
+                cout<<ERRORES[7];
                 exit(0);
                 }
             }else{
             //se muere
-            cout<<"ERROR: se esperaba un numero\n";
+            cout<<ERRORES[6];
             exit(0);
             }
         }else{
         //se muere
-        cout<<"ERROR: se esperaba un simbolo de inicio de codigo '('\n";
+        cout<<ERRORES[5];
         exit(0);
         }
     }

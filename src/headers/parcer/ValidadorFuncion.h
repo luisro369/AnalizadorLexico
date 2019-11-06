@@ -49,42 +49,42 @@ int validadorFuncion(vector<string> VSin, int pos){
                                         cout<<"CORCHETE QUE INDICA FIN DE SUBCODIGO--------SINTACTICO\n";
                                     }else{
                                         //se muere
-                                        cout<<"ERROR: se esperaba simbolo de fin de subcodigo '}'\n";
-                                        exit(0);
+                                        cout<<;
+                                        exit(0);ERRORES[13]
                                     }
                                 }else{
                                     //se muere
-                                    cout<<"ERROR: se esperaba simbolo de fin de liena ';'\n";
+                                    cout<<ERRORES[9];
                                     exit(0);
                                 }
                             }else{
                                 //se muere
-                                cout<<"ERROR: se esperaba una variable para el retorno\n";
+                                cout<<ERRORES[14];
                                 exit(0);
                             }
                         }else{
                             //se muere
-                            cout<<"ERROR: se esperaba simbolo de incio de subcodigo '{'\n";
+                            cout<<ERRORES[2];
                             exit(0);
                         }
                     }else{
                     //se muere
-                    cout<<"ERROR: se esperaba simbolo de fin de paramtro ')'\n";
+                    cout<<ERRORES[3];
                     exit(0);
                     }
                 }else{
                 //se muere
-                cout<<"ERROR: se esperaba parametro\n";
+                cout<<ERRORES[15];
                 exit(0);
                 }
             }else{
             //se muere
-            cout<<"ERROR: se esperaba simbolo de inicio de parametro '('\n";
+            cout<<ERRORES[6];
             exit(0);
             }
         }else{
          //se muere
-        cout<<"ERROR: se esperaba nombre para la funcion\n";
+        cout<<ERRORES[16];
         exit(0);
         }
     }
