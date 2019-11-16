@@ -16,12 +16,21 @@ int main (void){
   vector<string> vectorPalabras,vectorPalabrasAnalizadas;
   vectorPalabras = CodeReader("./data/code.txt");
   vectorPalabrasAnalizadas = AnalizadorLexicoGrafico(vectorPalabras);
+  //analizar en que linea va el codigo,
+  
   
   //for de prueba borrar todo esto
   cout<<"====================PALABRAS ANALIZADAS============ \n";
   for(int i =0; i< vectorPalabrasAnalizadas.size(); i++){
     cout<<vectorPalabrasAnalizadas[i]<<"\n";
   }//for de prueba borrar
+
+  cout<<"====================LINEAS============ \n";
+  int i = 0;
+  while(i < est.VectorLineas.size()){
+    cout<<"pos: "<<est.VectorLineas[i]<<" lex: "<<vectorPalabrasAnalizadas[est.VectorLineas[i]]<<" linea---> "<<est.VectorLineas[i+1]<<endl;
+    i += 2;
+  }//while
   
   AnalizadorSintactico(vectorPalabrasAnalizadas);
   return 0;

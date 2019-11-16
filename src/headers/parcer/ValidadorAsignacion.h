@@ -56,7 +56,7 @@ int validadorAsignacion(vector<string> VSin, int pos){
         //verifica que acontinuacion cotenga un lexema adecuado para nombre de variable
         if(VSin[pos] == "VAR"){
             //avance de carro
-            cout<<"NOMBRE DE VARIABLE ADECAUDA-----------------SINTACTICO\n";
+            cout<<"NOMBRE DE VARIABLE ADECUADA-----------------SINTACTICO\n";
              pos = pos+1;
             //verifica que acontinuacion contenga el simbolo asigando para asignacion
             if(VSin[pos] == ARITMT[6]){
