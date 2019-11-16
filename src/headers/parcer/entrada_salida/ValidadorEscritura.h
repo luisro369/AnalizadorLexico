@@ -6,9 +6,11 @@
 
 //Funcion para validar
 int validadorEscritura(vector<string> VSin, int pos){
+  int posTemp;
     if(VSin[pos] == TOKENST[12]){
         //Indicador de repetidor
         cout<<"FUNCION DE ESCRITURA CONSOLA----------------SINTACTICO\n";
+        posTemp = est.conversion(pos);//<---aca agarro la posicion real de la linea
         pos = pos+1;
         if(VSin[pos] == ESPT[7]){
             //todobien
@@ -28,12 +30,14 @@ int validadorEscritura(vector<string> VSin, int pos){
                         pos;
                     }else{
                         //se muere
-                        cout<<ERRORES[9];
+                        //cout<<ERRORES[9];
+                        cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[9];
                         exit(0);
                     }
                 }else{
                     //se muere
-                    cout<<ERRORES[3];
+                    //cout<<ERRORES[3];
+                    cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[3];
                     exit(0);
                 }
             }else{
@@ -50,7 +54,8 @@ int validadorEscritura(vector<string> VSin, int pos){
             }
         }else{
             //se muere
-            cout<<ERRORES[6];
+            //cout<<ERRORES[6];
+            cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
             exit(0);
         }
     }

@@ -6,9 +6,11 @@
 
 //Funcion que valida
 int validadorFuncion(vector<string> VSin, int pos){
+  int posTemp;
    if(VSin[pos] == TOKENST[14]){
          //Indicador de repetidor
         cout<<"INDICADOR INICIO DE FUNCION-----------------SINTACTICO\n";
+        posTemp = est.conversion(pos);//<---aca agarro la posicion real de la linea
         pos = pos+1;
         if(VSin[pos] == "VAR"){
             //todo bien
@@ -49,42 +51,50 @@ int validadorFuncion(vector<string> VSin, int pos){
                                         cout<<"CORCHETE QUE INDICA FIN DE SUBCODIGO--------SINTACTICO\n";
                                     }else{
                                         //se muere
-                                        cout<<ERRORES[13];
+                                        //cout<<ERRORES[13];
+                                        cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[13];
                                         exit(0);
                                     }
                                 }else{
                                     //se muere
-                                    cout<<ERRORES[9];
+                                    //cout<<ERRORES[9];
+                                    cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[9];
                                     exit(0);
                                 }
                             }else{
                                 //se muere
-                                cout<<ERRORES[14];
+                                //cout<<ERRORES[14];
+                                cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[14];
                                 exit(0);
                             }
                         }else{
                             //se muere
-                            cout<<ERRORES[2];
+                            //cout<<ERRORES[2];
+                            cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[2];
                             exit(0);
                         }
                     }else{
                     //se muere
-                    cout<<ERRORES[3];
+                    //cout<<ERRORES[3];
+                    cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[3];
                     exit(0);
                     }
                 }else{
                 //se muere
-                cout<<ERRORES[15];
+                //cout<<ERRORES[15];
+                cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[15];
                 exit(0);
                 }
             }else{
             //se muere
-            cout<<ERRORES[6];
+            //cout<<ERRORES[6];
+            cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
             exit(0);
             }
         }else{
          //se muere
-        cout<<ERRORES[16];
+          //cout<<ERRORES[16];
+        cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[16];
         exit(0);
         }
     }

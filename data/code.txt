@@ -7,10 +7,12 @@ CAD cadena:="cadenaDeCaracteres";
 CAR Respuesta:='a';
 BOOL Varo:=VERDADERO;
 
-PARA (0, 10, 2){
-mierda:= "esMayor";
-RET mierda;
+FUNC holi (ENTRADA){
+BLOQUE
+DEV variable;
 }
+
+LEER ("\agora.txt");
 
 SI (Variable<Variable){
 Respuesta:="esmayor?";
