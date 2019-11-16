@@ -82,11 +82,11 @@ int validadorProceso(vector<string> VSin, int pos){
 //funcion que manejara el flujo
 void AnalizadorSintactico(vector<string> vectorPalabrasAnalizadas){
   cout<<"=========================ANALIZADOR SINTACTICO========================\n";
-  validadorInicioFin(vectorPalabrasAnalizadas,0);//
+  validadorInicioFin(vectorPalabrasAnalizadas,0);//s
   //for para recorrer el vector de tokens y lexemas analizados
   for(int pos=1; pos<vectorPalabrasAnalizadas.size()-2;pos++){
-    pos = validadorAsignacion(vectorPalabrasAnalizadas,pos);//
-    pos = validadorCondicional(vectorPalabrasAnalizadas,pos);//
+    pos = validadorAsignacion(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorCondicional(vectorPalabrasAnalizadas,pos);//s
     pos = validadorRepetidor(vectorPalabrasAnalizadas,pos);//
     pos = validadorLectura(vectorPalabrasAnalizadas,pos);//
     pos = validadorEscritura(vectorPalabrasAnalizadas,pos);//

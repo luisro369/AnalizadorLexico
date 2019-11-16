@@ -6,9 +6,11 @@
 
 //Fucion que valida
 int validadorCondicional(vector<string> VSin, int pos){
+  int posTemp;
     if(VSin[pos] == TOKENST[6] || VSin[pos] == TOKENST[7] || VSin[pos] == TOKENST[9]){
         //todo bien 
         cout<<"DECLARACION DE CONDICIONAL------------------SINTACTICO\n";
+        posTemp = est.conversion(pos);//<---aca agarro la posicion real de la linea
         pos = pos+1;
         if(VSin[pos] == ESPT[7]){
         //todobien
@@ -41,32 +43,38 @@ int validadorCondicional(vector<string> VSin, int pos){
                                 cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
                             }else{
                             //se muere
-                            cout<<ERRORES[2];
+                            //cout<<ERRORES[2];
+                            cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[2];
                             exit(0);
                             }
                         }else{
                         //se muere
-                        cout<<ERRORES[3];
+                        //cout<<ERRORES[3];
+                        cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[3];
                         exit(0);
                         }
                     }else{
                     //se muere
-                    cout<<ERRORES[4];
+                    //cout<<ERRORES[4];
+                    cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[4];
                     exit(0);
                     }
                 }else{
                 //se muere
-                cout<<ERRORES[5];
+                //cout<<ERRORES[5];
+                cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[5];
                 exit(0);
                 }
             }else{
             //se muere
-            cout<<ERRORES[4];
+            //cout<<ERRORES[4];
+            cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[4];
             exit(0);
             }
         }else{
         //se muere
-        cout<<ERRORES[6];
+        //cout<<ERRORES[6];
+        cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
         exit(0);
         }
     }
