@@ -24,12 +24,12 @@ int main (void){
   for(int i =0; i< vectorPalabrasAnalizadas.size(); i++){
     cout<<vectorPalabrasAnalizadas[i]<<"\n";
   }//for de prueba borrar
-
+  
   cout<<"====================LINEAS============ \n";
   int i = 0;
   while(i < est.VectorLineas.size()){
-    cout<<"pos: "<<est.VectorLineas[i]<<" lex: "<<vectorPalabrasAnalizadas[est.VectorLineas[i]]<<" linea---> "<<est.VectorLineas[i+1]<<endl;
-    i += 2;
+    cout<<"pos: "<<est.VectorPos[i]<<" lex: "<<vectorPalabras[est.VectorPos[i]]<<" linea---> "<<est.VectorLineas[i]<<endl;
+    i += 1;
   }//while
   
   AnalizadorSintactico(vectorPalabrasAnalizadas);

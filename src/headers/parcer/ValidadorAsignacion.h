@@ -47,11 +47,12 @@ bool validadorValorVariable(string lexema, int tokenTemp){
 //Funcion que valida 
 int validadorAsignacion(vector<string> VSin, int pos){
     //verifica si se ha ingresado un token de tipo dato
-    int tokenTemp;
+  int tokenTemp,posTemp;
     if(VSin[pos] == TOKENST[1] || VSin[pos] == TOKENST[2] || VSin[pos] == TOKENST[3] || VSin[pos] == TOKENST[4] || VSin[pos] == TOKENST[5]){
         //avance de carro
         tokenTemp = identificadorTipo(VSin[pos]);
         cout<<"DECLARACION DE VARIABLE---------------------SINTACTICO\n";
+        posTemp = est.conversion(pos);//<---aca agarro la posicion real de la linea
         pos = pos+1;
         //verifica que acontinuacion cotenga un lexema adecuado para nombre de variable
         if(VSin[pos] == "VAR"){
@@ -74,22 +75,26 @@ int validadorAsignacion(vector<string> VSin, int pos){
                         cout<<"SIMBOLO DE FIN DE LINEA CORRECTA------------SINTACTICO\n";
                     }else{
                         //se muere
-                        cout<<ERRORES[9];
+                        //cout<<ERRORES[9];
+                        cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[9];
                         exit(0);
                     }
                 }else{
                     //se muere
-                    cout<<ERRORES[10];
+                    //cout<<ERRORES[10];
+                    cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[10];
                     exit(0);
                 }
             }else{
                 //se muere
-                cout<<ERRORES[11]; 
+                //cout<<ERRORES[11];
+                cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[11];
                 exit(0);
             }
         }else{
             //se muere
-            cout<<ERRORES[12]; 
+            //cout<<ERRORES[12];
+            cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[12];
             exit(0);
         }
     }

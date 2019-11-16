@@ -15,6 +15,7 @@
 #include "arreglos/ValidadorDimensionArreglo.h"
 #include "arreglos/ValidadorIngresoArreglo.h"
 #include "arreglos/ValidadorLeerArreglo.h"
+//#include "../../headers/CodeReader.h"
 
 
 int validadorProceso(vector<string> VSin, int pos){
@@ -81,7 +82,7 @@ int validadorProceso(vector<string> VSin, int pos){
 //funcion que manejara el flujo
 void AnalizadorSintactico(vector<string> vectorPalabrasAnalizadas){
   cout<<"=========================ANALIZADOR SINTACTICO========================\n";
-  validadorInicioFin(vectorPalabrasAnalizadas);//
+  validadorInicioFin(vectorPalabrasAnalizadas,0);//
   //for para recorrer el vector de tokens y lexemas analizados
   for(int pos=1; pos<vectorPalabrasAnalizadas.size()-2;pos++){
     pos = validadorAsignacion(vectorPalabrasAnalizadas,pos);//

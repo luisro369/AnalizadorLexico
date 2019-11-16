@@ -11,6 +11,17 @@ using namespace std;
 
 struct vectorLineas {
   std::vector<int> VectorLineas;
+  std::vector<int> VectorPos;
+  //--metodo de conversion de vector de palabras analizadas al vector de posiciones (sirve para conseguir la linea del error)
+  int conversion(int posAnalizado){
+    int j = 0;
+    for(int i=0; i<VectorPos.size(); i++){
+      if(VectorPos[i] <= posAnalizado){
+        j = i+1;
+      }//if
+    }//for
+    return j;
+  }//conversion
 }est;
 
 /*
@@ -61,9 +72,6 @@ vector<string> CodeReader(string File){
           pos = pos +1;
         }//if
       }//elseif
-      
-      
-      
       //================token normal============
       else{//<--- si es otro token perteneciente a tokenEsp
         VectorDePalabras.push_back(palabra.substr(pos,1));
@@ -72,26 +80,29 @@ vector<string> CodeReader(string File){
       prev = pos+1;
       palabraCompuesta = "";
     }//while
+    //--------------------estructura vectores de linea------------------
     linea += 1;
     int n = VectorDePalabras.size();
-    est.VectorLineas.push_back(n-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
+    est.VectorPos.push_back(n-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
     est.VectorLineas.push_back(linea);
     }//if
+
+
     
     //==========================Token normal==========
     else{
       VectorDePalabras.push_back(palabra);
-    
+      //--------------------------estructura vectores de linea-------------
       int m = VectorDePalabras.size();
       palabraINICIOFIN = VectorDePalabras[m-1];
       if(strcmp(palabraINICIOFIN.c_str(),"INICIO") == 0){
         linea += 1;
-        est.VectorLineas.push_back(m-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
+        est.VectorPos.push_back(m-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
         est.VectorLineas.push_back(linea);
       }
       if(strcmp(palabraINICIOFIN.c_str(),"FINCODIGO") == 0){
         linea += 1;
-        est.VectorLineas.push_back(m-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
+        est.VectorPos.push_back(m-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
         est.VectorLineas.push_back(linea);
       }
     }//<--- si la palabra es token
