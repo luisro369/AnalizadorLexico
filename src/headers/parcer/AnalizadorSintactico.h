@@ -15,7 +15,7 @@
 #include "arreglos/ValidadorDimensionArreglo.h"
 #include "arreglos/ValidadorIngresoArreglo.h"
 #include "arreglos/ValidadorLeerArreglo.h"
-
+#include "ValidadorMientras.h"
 
 int validadorProceso(vector<string> VSin, int pos){
     if(VSin[pos] == TOKENST[13]){
@@ -87,6 +87,7 @@ void AnalizadorSintactico(vector<string> vectorPalabrasAnalizadas){
     pos = validadorAsignacion(vectorPalabrasAnalizadas,pos);//
     pos = validadorCondicional(vectorPalabrasAnalizadas,pos);//
     pos = validadorRepetidor(vectorPalabrasAnalizadas,pos);//
+    pos = validadorMientras(vectorPalabrasAnalizadas,pos);//
     pos = validadorLectura(vectorPalabrasAnalizadas,pos);//
     pos = validadorEscritura(vectorPalabrasAnalizadas,pos);//
     pos = validadorManejoArchivos(vectorPalabrasAnalizadas,pos);//
@@ -96,6 +97,5 @@ void AnalizadorSintactico(vector<string> vectorPalabrasAnalizadas){
     pos = validadorDimArreglo(vectorPalabrasAnalizadas,pos);//
     pos = validadorIngArreglo(vectorPalabrasAnalizadas,pos);//
     pos = validadorLeerArreglo(vectorPalabrasAnalizadas,pos);//    
-  }
-  cout<<"=========================GRACIAS POR USAR AGORA=======================\n";
+  }  
 }//Analizador sintactico

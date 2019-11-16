@@ -66,46 +66,68 @@ bool isDecimal(string str){
     return retVal;
 }//checkNumeric
 
-vector<string> analizadorVariablesDatos(vector<string> vectorPalabrasAnalizadas, string lexema){
-    if(lexema.length() == 3 && lexema.substr(0,1) == "'" && lexema.substr(2,2) == "'" && !(checkAlpha(lexema.substr(1,1)))){
-        cout<<lexema<<" -----------> "<<" LET "<<"\n";
+vector<string> analizadorVariablesDatos(vector<string> vectorPalabrasAnalizadas, vector<string> vectorPalabras, int pos,int posVar){
+  string lexema = vectorPalabras[pos],nombre,tipo,valor;
+  variable variableAux;
+    if(lexema.length() == 1 && !(checkAlpha(lexema))){
+        nombre = vectorPalabras[pos-3];
+        tipo = vectorPalabras[pos-4];
+        valor = lexema;
+        cout<<lexema<<" -----------> "<<" LET\n";
         vectorPalabrasAnalizadas.push_back("LET");
     }else{
         if(lexema == "VERDADERO" || lexema == "FALSO"){
-            cout<<lexema<<" -----------> "<<" LOG "<<"\n";
+            nombre = vectorPalabras[pos-2];
+            tipo = vectorPalabras[pos-3];
+            valor = lexema;
+            cout<<lexema<<" -----------> "<<" LOG\n"; 
             vectorPalabrasAnalizadas.push_back("LOG");
         }else{
-            if(lexema.length() <= 15 && lexema.substr(0,1) != "'" && lexema.substr(0,1) != "\"" && lexema.substr(lexema.length()-1,lexema.length()-1) != "'" &&
-                 lexema.substr(lexema.length()-1,lexema.length()-1) != "\"" && !(checkAlpha(lexema))){
-                 cout<<lexema<<" -----------> "<<" VAR "<<"\n";
-                 vectorPalabrasAnalizadas.push_back("VAR");
+            if(lexema.length() <= 4 && !(checkNumeric(lexema))){
+                nombre = vectorPalabras[pos-2];
+                tipo = vectorPalabras[pos-3];
+                valor = lexema;
+                cout<<lexema<<" -----------> "<<" NUM\n";
+                vectorPalabrasAnalizadas.push_back("NUM");
             }else{
-                if(lexema.length() <= 4 && !(checkNumeric(lexema))){
-                    cout<<lexema<<" -----------> "<<" NUM "<<"\n";
-                    vectorPalabrasAnalizadas.push_back("NUM");
+                if(lexema.length() >= 3 && lexema.substr(0,1) == "\"" && lexema.substr(lexema.length()-1,lexema.length()-1) == "\"" && !checkAlpha(lexema.substr(1,lexema.length()-2))){
+                    nombre = vectorPalabras[pos-2];
+                    tipo = vectorPalabras[pos-3];
+                    valor = lexema;
+                    cout<<lexema<<" -----------> "<<" PAL\n";
+                    vectorPalabrasAnalizadas.push_back("PAL");
                 }else{
-                    if(lexema.length() >= 3 && lexema.substr(0,1) == "\"" && lexema.substr(lexema.length()-1,lexema.length()-1) == "\"" && !checkAlpha(lexema.substr(1,lexema.length()-2))){
-                        cout<<lexema<<" -----------> "<<" PAL "<<"\n";
-                        vectorPalabrasAnalizadas.push_back("PAL");
+                    if(lexema.length() <= 9 && !(isDecimal(lexema))){
+                          nombre = vectorPalabras[pos-2];
+                          tipo = vectorPalabras[pos-3];
+                          valor = lexema;
+                         cout<<lexema<<" -----------> "<<" DEC\n";
+                         vectorPalabrasAnalizadas.push_back("DEC");
                     }else{
-                        if(lexema.length() <= 9 && !(isDecimal(lexema))){
-                             cout<<lexema<<" -----------> "<<" DEC "<<"\n";
-                             vectorPalabrasAnalizadas.push_back("DEC");
-                        }else{
-                            cout<<lexema<<" -----------> "<<" lexema "<<"\n";
-                            vectorPalabrasAnalizadas.push_back("lexema");
-                        }
+                         if(lexema.length() <= 15 && lexema.substr(0,1) != "'" && lexema.substr(0,1) != "\"" && lexema.substr(lexema.length()-1,lexema.length()-1) != "'" &&
+                           lexema.substr(lexema.length()-1,lexema.length()-1) != "\"" && !(checkAlpha(lexema))){
+                           vectorPalabrasAnalizadas.push_back("VAR");
+                          }else{
+                              cout<<lexema<<" -----------> "<<" lexema "<<"\n";
+                              vectorPalabrasAnalizadas.push_back("lexema");
+                          }
                     }
                 }
             }
         }
+    }
+    if(nombre != "" && tipo != "" && valor != "" ){
+      variableAux.nombre = nombre;
+      variableAux.tipo = tipo;
+      variableAux.valor = valor;
+      VARIABLES.push_back(variableAux);
     }
     return vectorPalabrasAnalizadas;    
 }
 
 vector<string> AnalizadorLexicoGrafico(vector<string> vectorPalabras){
   vector<string> vectorPalabrasAnalizadas;
-  int posTok,posAritm,posEsp,posLex;
+  int posTok,posAritm,posEsp,posLex,posVar;
   //recorriendo vector del archivo .txt y viendo si son iguales
   for(int i= 0; i < vectorPalabras.size() ; i++){
     //si el valor pertenece a un token
@@ -130,7 +152,7 @@ vector<string> AnalizadorLexicoGrafico(vector<string> vectorPalabras){
       continue;
     }//if
     else{
-      vectorPalabrasAnalizadas = analizadorVariablesDatos(vectorPalabrasAnalizadas,vectorPalabras[i]);  
+      vectorPalabrasAnalizadas = analizadorVariablesDatos(vectorPalabrasAnalizadas,vectorPalabras,i,posVar);  
     }//else
   }//for
   

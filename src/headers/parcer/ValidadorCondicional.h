@@ -6,7 +6,7 @@
 
 //Fucion que valida
 int validadorCondicional(vector<string> VSin, int pos){
-    if(VSin[pos] == TOKENST[6] || VSin[pos] == TOKENST[7] || VSin[pos] == TOKENST[9]){
+    if(VSin[pos] == TOKENST[6] || VSin[pos] == TOKENST[7]){
         //todo bien 
         cout<<"DECLARACION DE CONDICIONAL------------------SINTACTICO\n";
         pos = pos+1;

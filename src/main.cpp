@@ -18,11 +18,19 @@ int main (void){
   vectorPalabrasAnalizadas = AnalizadorLexicoGrafico(vectorPalabras);
   
   //for de prueba borrar todo esto
-  cout<<"====================PALABRAS ANALIZADAS============ \n";
+  cout<<"====================PALABRAS ANALIZADAS==================== \n";
   for(int i =0; i< vectorPalabrasAnalizadas.size(); i++){
     cout<<vectorPalabrasAnalizadas[i]<<"\n";
   }//for de prueba borrar
   
   AnalizadorSintactico(vectorPalabrasAnalizadas);
+
+  cout<<"====================VARIABBLES ALMACENADAS=================\n";
+  cout<<"Variables Almacenadas: "<<VARIABLES.size()<<"\n";
+
+  for(int i=0; i< VARIABLES.size(); i++){
+  	cout<<VARIABLES[i].nombre<<" <----nombre "<<VARIABLES[i].tipo<<" <----tipo "<<VARIABLES[i].valor<<" <----valor\n";
+  }
+  cout<<"=================GRACIAS POR USAR AGORA====================\n";
   return 0;
 }//main

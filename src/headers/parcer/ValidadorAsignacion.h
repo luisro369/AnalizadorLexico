@@ -24,7 +24,7 @@ int identificadorTipo(string tipo){
     return tokenTemp;
 }
 
-bool validadorValorVariable(string lexema, int tokenTemp){
+bool validadorValorVariable(string lexema, int tokenTemp,int& posM, int pos,vector<string> VSin ){
     bool valRet = false;
     if(tokenTemp == 1 && lexema == "NUM"){
         valRet = true;
@@ -35,7 +35,9 @@ bool validadorValorVariable(string lexema, int tokenTemp){
     if(tokenTemp == 3 && lexema == "PAL"){
         valRet = true;
     }
-    if(tokenTemp == 4 && lexema == "LET"){
+    if(tokenTemp == 4 && lexema ==  "comilla" && VSin[pos+1] == "LET" && VSin[pos+2] == "comilla"){
+        pos = pos+2;
+        posM = pos;
         valRet = true;
     }
     if(tokenTemp == 5 && lexema == "LOG"){
@@ -64,7 +66,7 @@ int validadorAsignacion(vector<string> VSin, int pos){
                 cout<<"SIMBOLO DE ASIGNACON CORRECTA---------------SINTACTICO\n";
                  pos = pos+1;
                 //verifica si lo siguiente es un lexema adecuado segun el tipo de dato que se ha declarado
-                if(validadorValorVariable(VSin[pos],tokenTemp)){
+                if(validadorValorVariable(VSin[pos],tokenTemp,pos,pos,VSin)){
                     //avance de carro
                     cout<<"VALOR DE VARIABLE ADECUADA------------------SINTACTICO\n";
                      pos = pos+1;
