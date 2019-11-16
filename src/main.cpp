@@ -24,6 +24,7 @@ int main (void){
   for(int i =0; i< vectorPalabrasAnalizadas.size(); i++){
     cout<<vectorPalabrasAnalizadas[i]<<"\n";
   }//for de prueba borrar
+
   /*
   cout<<"====================LINEAS============ \n";
   int i = 0;
@@ -32,6 +33,7 @@ int main (void){
     i += 1;
   }//while
   */
+  
   AnalizadorSintactico(vectorPalabrasAnalizadas);
   return 0;
 }//main

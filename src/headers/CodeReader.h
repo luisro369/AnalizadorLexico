@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <stdio.h>
 #include <string.h>
+#include <sstream>
 
 
 using namespace std;
@@ -114,20 +115,36 @@ vector<string> CodeReader(string File){
 }//nuevo metodo
 
 
-/*por si acaso USAR ESTA, esta requiere que todo este dividido por espacios
-//funcion mejorada (ya no necesita de el archivo StringAnalyzer por ende es mas eficiente)
+
+/*//============METODO DE EMERGENCIA PERRO====================
 vector<string> CodeReader(string File){
   vector<string> VectorDePalabras;
-  fstream file;
-  string palabra;
-  file.open(File.c_str());
-  while(file >> palabra){
-    cout<<palabra<<endl;
-    VectorDePalabras.push_back(palabra);
-    
-  }//while
-  file.close();
-  return VectorDePalabras;
-}//nuevo metodo
+  int linea = 0;
+  string line;
+  ifstream fin;
+  fin.open(File);
+  if(fin.is_open()){
+    while ( getline ( fin, line )){
+      stringstream ss(line);
+      
+      while ( getline (ss ,line, ' ')){
+        VectorDePalabras.push_back(line);
+      }//while
+      if(line.length() == 0){
+        linea += 0;
+      }
+      else{
+        linea += 1;
+        int n = VectorDePalabras.size();
+        est.VectorPos.push_back(n-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
+        est.VectorLineas.push_back(linea);
+      }
+    }//while
+    return VectorDePalabras;
+  }//if
+  
+  else{
+    return VectorDePalabras;
+  }
+}//VECTORSTRING
 */
-
