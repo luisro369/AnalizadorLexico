@@ -42,24 +42,7 @@ vector<string> CodeReader(string File){
         VectorDePalabras.push_back(palabra.substr(pos,2));
         pos = pos +1;
       }//if
-      //=================hashtag========================
-      /*
-      else if( strcmp(palabraCompuesta.c_str(),"#") == 0 ){//<-- si es el token de asignacion
-        palabraCompuesta = "";
-        palabraCompuesta.push_back(palabra[pos+1]);
-        if( strcmp(palabraCompuesta.c_str(),"\\") == 0 ){
-          VectorDePalabras.push_back(palabra.substr(pos,2));
-          pos = pos +1;
-        }//if
-        palabraCompuesta = "";
-        palabraCompuesta.push_back(palabra[pos-1]);
-        if ( strcmp(palabraCompuesta.c_str(),"/" ) == 0){
-          VectorDePalabras.push_back(palabra.substr(pos-1,2));
-          //pos = pos +1;
-        }//elseif
-      }//elseif hastag
-      */
-      //=============slashl==================
+      //=============slash==================
       else if( strcmp(palabraCompuesta.c_str(),"/") == 0 ) {
         palabraCompuesta = "";
         palabraCompuesta.push_back(palabra[pos+1]);
@@ -80,7 +63,7 @@ vector<string> CodeReader(string File){
       }//elseif
       
       
-
+      
       //================token normal============
       else{//<--- si es otro token perteneciente a tokenEsp
         VectorDePalabras.push_back(palabra.substr(pos,1));
@@ -93,25 +76,26 @@ vector<string> CodeReader(string File){
     int n = VectorDePalabras.size();
     est.VectorLineas.push_back(n-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
     est.VectorLineas.push_back(linea);
-  }//if
-  
-  else{
-    VectorDePalabras.push_back(palabra);
+    }//if
     
-    int m = VectorDePalabras.size();
-    palabraINICIOFIN = VectorDePalabras[m-1];
-    if(strcmp(palabraINICIOFIN.c_str(),"INICIO") == 0){
-      linea += 1;
-      est.VectorLineas.push_back(m-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
-      est.VectorLineas.push_back(linea);
-    }
-    if(strcmp(palabraINICIOFIN.c_str(),"FINCODIGO") == 0){
-      linea += 1;
-      est.VectorLineas.push_back(m-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
-      est.VectorLineas.push_back(linea);
-    }
-  }//<--- si la palabra es token
-  
+    //==========================Token normal==========
+    else{
+      VectorDePalabras.push_back(palabra);
+    
+      int m = VectorDePalabras.size();
+      palabraINICIOFIN = VectorDePalabras[m-1];
+      if(strcmp(palabraINICIOFIN.c_str(),"INICIO") == 0){
+        linea += 1;
+        est.VectorLineas.push_back(m-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
+        est.VectorLineas.push_back(linea);
+      }
+      if(strcmp(palabraINICIOFIN.c_str(),"FINCODIGO") == 0){
+        linea += 1;
+        est.VectorLineas.push_back(m-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
+        est.VectorLineas.push_back(linea);
+      }
+    }//<--- si la palabra es token
+    
   }//while
   file.close();
   return VectorDePalabras;
