@@ -9,6 +9,7 @@
 using namespace std;
 // archivos necesarios
 
+//=================Estructura para poder llevar track de las lineas=========
 struct vectorLineas {
   std::vector<int> VectorLineas;
   std::vector<int> VectorPos;

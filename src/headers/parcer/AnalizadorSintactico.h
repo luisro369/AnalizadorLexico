@@ -95,11 +95,11 @@ void AnalizadorSintactico(vector<string> vectorPalabrasAnalizadas){
     pos = validadorEscritura(vectorPalabrasAnalizadas,pos);//s
     pos = validadorManejoArchivos(vectorPalabrasAnalizadas,pos);//s
     pos = validadorProceso(vectorPalabrasAnalizadas,pos);//s
-    pos = validadorFuncion(vectorPalabrasAnalizadas,pos);//
-    pos = validadorDefArreglo(vectorPalabrasAnalizadas,pos);//
-    pos = validadorDimArreglo(vectorPalabrasAnalizadas,pos);//
-    pos = validadorIngArreglo(vectorPalabrasAnalizadas,pos);//
-    pos = validadorLeerArreglo(vectorPalabrasAnalizadas,pos);//    
+    pos = validadorFuncion(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorDefArreglo(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorDimArreglo(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorIngArreglo(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorLeerArreglo(vectorPalabrasAnalizadas,pos);//s    
   }
   cout<<"=========================GRACIAS POR USAR AGORA=======================\n";
 }//Analizador sintactico
