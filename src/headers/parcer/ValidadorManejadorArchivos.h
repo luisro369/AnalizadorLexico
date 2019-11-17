@@ -6,9 +6,11 @@
 
 //Funcion que valida
 int validadorManejoArchivos(vector<string> VSin, int pos){
+  int posTemp;
     if(VSin[pos] == TOKENST[22] || VSin[pos] == TOKENST[23] || VSin[pos] == TOKENST[24]){
         //Indicador de repetidor
         cout<<"FUNCION DE MANEJO DE ARCHIVOS---------------SINTACTICO\n";
+        posTemp = est.conversion(pos);//<---aca agarro la posicion real de la linea
         pos = pos+1;
         if(VSin[pos] == ESPT[7]){
             //todobien
@@ -28,22 +30,26 @@ int validadorManejoArchivos(vector<string> VSin, int pos){
                         pos;
                     }else{
                         //se muere
-                        cout<<ERRORES[9];
+                        //cout<<ERRORES[9];
+                        cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[9];
                         exit(0);
                     }
                 }else{
                     //se muere
-                    cout<<ERRORES[3];
+                    //cout<<ERRORES[3];
+                    cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[3];
                     exit(0);
                 }
             }else{
                 //se muere
-                cout<<ERRORES[17];
+                //cout<<ERRORES[17];
+                cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[17];
                 exit(0);
             }
         }else{
             //se muere
-            cout<<ERRORES[6];
+            //cout<<ERRORES[6];
+            cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
             exit(0);
         }    
     }    

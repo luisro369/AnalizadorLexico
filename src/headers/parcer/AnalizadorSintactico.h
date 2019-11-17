@@ -18,9 +18,11 @@
 #include "ValidadorMientras.h"
 
 int validadorProceso(vector<string> VSin, int pos){
+  int posTemp;
     if(VSin[pos] == TOKENST[13]){
          //Indicador de repetidor
         cout<<"INDICADOR INICIO DE PROCESO-----------------SINTACTICO\n";
+        posTemp = est.conversion(pos);//<---aca agarro la posicion real de la linea
         pos = pos+1;
         if(VSin[pos] == "VAR"){
             //todo bien
@@ -49,27 +51,28 @@ int validadorProceso(vector<string> VSin, int pos){
                             cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
                         }else{
                         //se muere
-                        cout<<ERRORES[3];
+                        //cout<<ERRORES[3];
+                        cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[3];
                         exit(0);
                         }
                     }else{
                     //se muere
-                    cout<<"ERROR: se esperaba simbolo de fin de parametro ')'\n";
+                    cout<<"En linea: "<<est.VectorLineas[posTemp]<<"ERROR: se esperaba simbolo de fin de parametro ')'\n";
                     exit(0);
                     }
                 }else{
                 //se muere
-                cout<<"ERROR: se esperaba parametro\n";
+                cout<<"En linea: "<<est.VectorLineas[posTemp]<<"ERROR: se esperaba parametro\n";
                 exit(0);
                 }
             }else{
             //se muere
-            cout<<"ERROR: se esperaba simbolo de inicio de parametro '('\n";
+            cout<<"En linea: "<<est.VectorLineas[posTemp]<<"ERROR: se esperaba simbolo de inicio de parametro '('\n";
             exit(0);
             }
         }else{
          //se muere
-        cout<<"ERROR: se esperaba nombre para el proceso\n";
+        cout<<"En linea: "<<est.VectorLineas[posTemp]<<"ERROR: se esperaba nombre para el proceso\n";
         exit(0);
         }
     }
@@ -81,21 +84,21 @@ int validadorProceso(vector<string> VSin, int pos){
 //funcion que manejara el flujo
 void AnalizadorSintactico(vector<string> vectorPalabrasAnalizadas){
   cout<<"=========================ANALIZADOR SINTACTICO========================\n";
-  validadorInicioFin(vectorPalabrasAnalizadas);
+  validadorInicioFin(vectorPalabrasAnalizadas,0);//s
   //for para recorrer el vector de tokens y lexemas analizados
   for(int pos=1; pos<vectorPalabrasAnalizadas.size()-2;pos++){
-    pos = validadorAsignacion(vectorPalabrasAnalizadas,pos);//
-    pos = validadorCondicional(vectorPalabrasAnalizadas,pos);//
-    pos = validadorRepetidor(vectorPalabrasAnalizadas,pos);//
-    pos = validadorMientras(vectorPalabrasAnalizadas,pos);//
-    pos = validadorLectura(vectorPalabrasAnalizadas,pos);//
-    pos = validadorEscritura(vectorPalabrasAnalizadas,pos);//
-    pos = validadorManejoArchivos(vectorPalabrasAnalizadas,pos);//
-    pos = validadorProceso(vectorPalabrasAnalizadas,pos);//
-    pos = validadorFuncion(vectorPalabrasAnalizadas,pos);//
-    pos = validadorDefArreglo(vectorPalabrasAnalizadas,pos);//
-    pos = validadorDimArreglo(vectorPalabrasAnalizadas,pos);//
-    pos = validadorIngArreglo(vectorPalabrasAnalizadas,pos);//
-    pos = validadorLeerArreglo(vectorPalabrasAnalizadas,pos);//    
-  }  
+    pos = validadorAsignacion(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorCondicional(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorRepetidor(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorLectura(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorEscritura(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorManejoArchivos(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorProceso(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorFuncion(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorDefArreglo(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorDimArreglo(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorIngArreglo(vectorPalabrasAnalizadas,pos);//s
+    pos = validadorLeerArreglo(vectorPalabrasAnalizadas,pos);//s    
+  }
+  cout<<"=========================GRACIAS POR USAR AGORA=======================\n";
 }//Analizador sintactico

@@ -6,9 +6,11 @@
 
 //Funcion para validar
 int validadorLectura(vector<string> VSin, int pos){
+  int posTemp;
     if(VSin[pos] == TOKENST[11]){
         //Indicador de repetidor
         cout<<"FUNCION DE LECTURA CONSOLA------------------SINTACTICO\n";
+        posTemp = est.conversion(pos);//<---aca agarro la posicion real de la linea
         pos = pos+1;
         if(VSin[pos] == ESPT[7]){
             //todobien
@@ -27,23 +29,27 @@ int validadorLectura(vector<string> VSin, int pos){
                         cout<<"SIMBOLO DE FIN DE LINEA CORRECTA------------SINTACTICO\n";
                         pos;
                     }else{
-                        //se muere
-                        cout<<ERRORES[9];
+                      //se muere
+                      //cout<<ERRORES[9];
+                      cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[9];
                         exit(0);
                     }
                 }else{
                     //se muere
-                    cout<<ERRORES[3];
+                    //cout<<ERRORES[3];
+                    cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[3];
                     exit(0);
                 }
             }else{
                 //se muere
-                cout<<ERRORES[4];
+                //cout<<ERRORES[4];
+                cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[4];
                 exit(0);
             }
         }else{
             //se muere
-            cout<<ERRORES[6];
+            //cout<<ERRORES[6];
+            cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
             exit(0);
         }
     }

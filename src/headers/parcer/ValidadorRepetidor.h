@@ -6,9 +6,11 @@
 
 //Funcion que valida
 int validadorRepetidor(vector<string> VSin, int pos){
+  int posTemp;
     if(VSin[pos] == TOKENST[8]){
         //Indicador de repetidor
         cout<<"INICIO DE REPETIDOR CORRECTO----------------SINTACTICO\n";
+        posTemp = est.conversion(pos);//<---aca agarro la posicion real de la linea
         pos = pos+1;
         if(VSin[pos] == ESPT[7]){
             //todobien
@@ -49,42 +51,50 @@ int validadorRepetidor(vector<string> VSin, int pos){
                                         cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
                                     }else{
                                     //se muere
-                                    cout<<ERRORES[3];
+                                    //cout<<ERRORES[3];
+                                    cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[3];
                                     exit(0);
                                     }
                                 }else{
                                 //se muere
-                                cout<<ERRORES[4];
+                                //cout<<ERRORES[4];
+                                cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[4];
                                 exit(0);
                                 }
                             }else{
                             //se muere
-                            cout<<ERRORES[6];
+                            //cout<<ERRORES[6];
+                            cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
                             exit(0);
                             }
                         }else{
                         //se muere
-                        cout<<ERRORES[7];
+                        //cout<<ERRORES[7];
+                        cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[7];
                         exit(0);
                         }
                     }else{
                     //se muere
-                    cout<<ERRORES[6];
+                    //cout<<ERRORES[6];
+                    cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
                     exit(0);
                     }
                 }else{
                 //se muere
-                cout<<ERRORES[7];
+                //cout<<ERRORES[7];
+                cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[7];
                 exit(0);
                 }
             }else{
             //se muere
-            cout<<ERRORES[6];
+            //cout<<ERRORES[6];
+            cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
             exit(0);
             }
         }else{
         //se muere
-        cout<<ERRORES[5];
+        //cout<<ERRORES[5];
+        cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[5];
         exit(0);
         }
     }

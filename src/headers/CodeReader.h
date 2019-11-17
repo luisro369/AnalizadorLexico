@@ -4,11 +4,27 @@
 #include <algorithm>
 #include <stdio.h>
 #include <string.h>
+#include <sstream>
 
 
 using namespace std;
 // archivos necesarios
 
+//=================Estructura para poder llevar track de las lineas=========
+struct vectorLineas {
+  std::vector<int> VectorLineas;
+  std::vector<int> VectorPos;
+  //--metodo de conversion de vector de palabras analizadas al vector de posiciones (sirve para conseguir la linea del error)
+  int conversion(int posAnalizado){
+    int j = 0;
+    for(int i=0; i<VectorPos.size(); i++){
+      if(VectorPos[i] <= posAnalizado){
+        j = i+1;
+      }//if
+    }//for
+    return j;
+  }//conversion
+}est;
 
 /*
 Con esta funcion soy capaz de leer archivos .txt
@@ -17,10 +33,10 @@ Con esta funcion soy capaz de leer archivos .txt
 
 vector<string> CodeReader(string File){
   vector<string> VectorDePalabras;
-  const char *tokensEsp = "%^*-+/:={}[]><==()/##\\;,&&||'";//<---valores a comparar
+  const char *tokensEsp = "%^*-+:=/{}[]'><()##\\;,&&||";//<---valores a comparar
   fstream file;
-  int posCaracter = 0;
-  string palabra,palabraDosPuntos;
+  int posCaracter = 0,linea = 0;
+  string palabra,palabraCompuesta,palabraINICIOFIN;
   
   file.open(File.c_str());
   while(file >> palabra){
@@ -33,43 +49,102 @@ vector<string> CodeReader(string File){
       if( (pos-prev) > 0){//<----cuando no sea vacia (correccion de bug que habia)
         VectorDePalabras.push_back(palabra.substr(prev,pos-prev));//<--agrego lexemas
       }//if
-      
-      palabraDosPuntos.push_back(palabra[pos]);
-      if( strcmp(palabraDosPuntos.c_str(),":") == 0 ){//<-- si es el token de asignacion
+      //==================asignacion=================
+      palabraCompuesta.push_back(palabra[pos]);
+      if( strcmp(palabraCompuesta.c_str(),":") == 0 ){//<-- si es el token de asignacion
         VectorDePalabras.push_back(palabra.substr(pos,2));
         pos = pos +1;
       }//if
+      //=============slash==================
+      else if( strcmp(palabraCompuesta.c_str(),"/") == 0 ) {
+        palabraCompuesta = "";
+        palabraCompuesta.push_back(palabra[pos+1]);
+        if( strcmp(palabraCompuesta.c_str(),"#") == 0 ){
+          VectorDePalabras.push_back(palabra.substr(pos,2));
+          pos = pos +1;
+        }
+        else{VectorDePalabras.push_back(palabra.substr(pos,1));}
+      }//elseif slash
+      //=================hashtag========================
+      else if( strcmp(palabraCompuesta.c_str(),"#") == 0 ){//<-- si es el token de asignacion
+        palabraCompuesta = "";
+        palabraCompuesta.push_back(palabra[pos+1]);
+        if( strcmp(palabraCompuesta.c_str(),"\\") == 0 ){
+          VectorDePalabras.push_back(palabra.substr(pos,2));
+          pos = pos +1;
+        }//if
+      }//elseif
+      //================token normal============
       else{//<--- si es otro token perteneciente a tokenEsp
         VectorDePalabras.push_back(palabra.substr(pos,1));
       }//else
       
       prev = pos+1;
-      palabraDosPuntos = "";
-    }//while    
-  }//if
-  
-  else{VectorDePalabras.push_back(palabra);}//<--- si la palabra es token
-  
-  }//while
-  file.close();
-  return VectorDePalabras;
-}//nuevo metodo
+      palabraCompuesta = "";
+    }//while
+    //--------------------estructura vectores de linea------------------
+    linea += 1;
+    int n = VectorDePalabras.size();
+    est.VectorPos.push_back(n-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
+    est.VectorLineas.push_back(linea);
+    }//if
 
 
-/*por si acaso USAR ESTA, esta requiere que todo este dividido por espacios
-//funcion mejorada (ya no necesita de el archivo StringAnalyzer por ende es mas eficiente)
-vector<string> CodeReader(string File){
-  vector<string> VectorDePalabras;
-  fstream file;
-  string palabra;
-  file.open(File.c_str());
-  while(file >> palabra){
-    cout<<palabra<<endl;
-    VectorDePalabras.push_back(palabra);
+    
+    //==========================Token normal==========
+    else{
+      VectorDePalabras.push_back(palabra);
+      //--------------------------estructura vectores de linea-------------
+      int m = VectorDePalabras.size();
+      palabraINICIOFIN = VectorDePalabras[m-1];
+      if(strcmp(palabraINICIOFIN.c_str(),"INICIO") == 0){
+        linea += 1;
+        est.VectorPos.push_back(m-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
+        est.VectorLineas.push_back(linea);
+      }
+      if(strcmp(palabraINICIOFIN.c_str(),"FINCODIGO") == 0){
+        linea += 1;
+        est.VectorPos.push_back(m-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
+        est.VectorLineas.push_back(linea);
+      }
+    }//<--- si la palabra es token
     
   }//while
   file.close();
   return VectorDePalabras;
 }//nuevo metodo
-*/
 
+
+
+/*//============METODO DE EMERGENCIA PERRO====================
+vector<string> CodeReader(string File){
+  vector<string> VectorDePalabras;
+  int linea = 0;
+  string line;
+  ifstream fin;
+  fin.open(File);
+  if(fin.is_open()){
+    while ( getline ( fin, line )){
+      stringstream ss(line);
+      
+      while ( getline (ss ,line, ' ')){
+        VectorDePalabras.push_back(line);
+      }//while
+      if(line.length() == 0){
+        linea += 0;
+      }
+      else{
+        linea += 1;
+        int n = VectorDePalabras.size();
+        est.VectorPos.push_back(n-1);//ingreso la posicion del ultimo token de la linea (sirve para tener track de el)
+        est.VectorLineas.push_back(linea);
+      }
+    }//while
+    return VectorDePalabras;
+  }//if
+  
+  else{
+    return VectorDePalabras;
+  }
+}//VECTORSTRING
+*/
