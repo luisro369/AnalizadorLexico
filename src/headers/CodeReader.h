@@ -33,7 +33,7 @@ Con esta funcion soy capaz de leer archivos .txt
 
 vector<string> CodeReader(string File){
   vector<string> VectorDePalabras;
-  const char *tokensEsp = "%^*-+:=/{}[]'><()##\\;,&&||";//<---valores a comparar
+  const char *tokensEsp = "%^*-+:=/{}[]><()##\\;,&&||";//<---valores a comparar
   fstream file;
   int posCaracter = 0,linea = 0;
   string palabra,palabraCompuesta,palabraINICIOFIN;
