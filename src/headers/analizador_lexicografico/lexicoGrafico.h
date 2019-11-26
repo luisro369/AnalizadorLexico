@@ -69,9 +69,9 @@ bool isDecimal(string str){
 vector<string> analizadorVariablesDatos(vector<string> vectorPalabrasAnalizadas, vector<string> vectorPalabras, int pos,int posVar){
   string lexema = vectorPalabras[pos],nombre,tipo,valor;
   variable variableAux;
-    if(lexema.length() == 1 && !(checkAlpha(lexema))){
-        nombre = vectorPalabras[pos-3];
-        tipo = vectorPalabras[pos-4];
+    if(lexema.length() == 3 && lexema.substr(0,1) == "\'" && lexema.substr(lexema.length()-1,lexema.length()-1) == "\'" && !checkAlpha(lexema.substr(1,lexema.length()-2))){
+        nombre = vectorPalabras[pos-2];
+        tipo = vectorPalabras[pos-3];
         valor = lexema;
         cout<<lexema<<" -----------> "<<" LET\n";
         vectorPalabrasAnalizadas.push_back("LET");

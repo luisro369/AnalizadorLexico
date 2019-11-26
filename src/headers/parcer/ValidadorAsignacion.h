@@ -35,9 +35,7 @@ bool validadorValorVariable(string lexema, int tokenTemp,int& posM, int pos,vect
     if(tokenTemp == 3 && lexema == "PAL"){
         valRet = true;
     }
-    if(tokenTemp == 4 && lexema ==  "comilla" && VSin[pos+1] == "LET" && VSin[pos+2] == "comilla"){
-        pos = pos+2;
-        posM = pos;
+    if(tokenTemp == 4 && lexema == "LET"){
         valRet = true;
     }
     if(tokenTemp == 5 && lexema == "LOG"){

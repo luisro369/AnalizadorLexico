@@ -30,5 +30,6 @@ vector<string> ERRORES =
 	"ERROR_0021: se esperaba una variable arreglo\n",
 	"ERROR_0022: se esperaba un numero para la posicion del arreglo\n",
 	"ERROR_0023: se esperaba una variable para ingresarla en el arreglo\n",
-	"ERROR_0024: se esperaba un numero para la posicion del arreglo\n"
+	"ERROR_0024: se esperaba un numero para la posicion del arreglo\n",
+	"ERROR_0025: se esperaba simbolo de fin de subcodigo '}'\n",
 };

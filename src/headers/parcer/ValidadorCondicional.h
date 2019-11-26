@@ -6,8 +6,8 @@
 
 //Fucion que valida
 int validadorCondicional(vector<string> VSin, int pos){
-  int posTemp;
-    if(VSin[pos] == TOKENST[6] || VSin[pos] == TOKENST[7] || VSin[pos] == TOKENST[9]){
+  int posTemp,posTempAux;
+    if(VSin[pos] == TOKENST[6] || VSin[pos] == TOKENST[7]){
         //todo bien 
         cout<<"DECLARACION DE CONDICIONAL------------------SINTACTICO\n";
         posTemp = est.conversion(pos);//<---aca agarro la posicion real de la linea
@@ -36,11 +36,16 @@ int validadorCondicional(vector<string> VSin, int pos){
                                 //todobien
                                 cout<<"CORCHETE  QUE INDICA INICIO DE CODIGO-------SINTACTICO\n";
                                 pos = pos+1;
-                                while(VSin[pos] != ESPT[1]){
+                                posTempAux = posTemp; 
+                                while(VSin[pos] != ESPT[1] && pos != VSin.size()-1){
                                     cout<<"CODIGO DENTRO DE CONDICIONAL----------------SINTACTICO\n";   
                                     pos = pos+1;                                  
                                 }
-                                cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
+                                if(pos != VSin.size()-1){
+                                    cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
+                                }else{
+                                    cout<<"En linea: "<<est.VectorLineas[posTempAux]<<" "<<ERRORES[25];
+                                }
                             }else{
                             //se muere
                             //cout<<ERRORES[2];

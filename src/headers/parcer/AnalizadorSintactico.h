@@ -86,7 +86,7 @@ void AnalizadorSintactico(vector<string> vectorPalabrasAnalizadas){
   cout<<"=========================ANALIZADOR SINTACTICO========================\n";
   validadorInicioFin(vectorPalabrasAnalizadas,0);//s
   //for para recorrer el vector de tokens y lexemas analizados
-  for(int pos=1; pos<vectorPalabrasAnalizadas.size()-2;pos++){
+  for(int pos=1; pos<vectorPalabrasAnalizadas.size();pos++){
     pos = validadorAsignacion(vectorPalabrasAnalizadas,pos);//s
     pos = validadorCondicional(vectorPalabrasAnalizadas,pos);//s
     pos = validadorRepetidor(vectorPalabrasAnalizadas,pos);//s
@@ -99,6 +99,7 @@ void AnalizadorSintactico(vector<string> vectorPalabrasAnalizadas){
     pos = validadorDimArreglo(vectorPalabrasAnalizadas,pos);//s
     pos = validadorIngArreglo(vectorPalabrasAnalizadas,pos);//s
     pos = validadorLeerArreglo(vectorPalabrasAnalizadas,pos);//s    
+    pos = validadorMientras(vectorPalabrasAnalizadas,pos);//s
   }
   cout<<"=========================GRACIAS POR USAR AGORA=======================\n";
 }//Analizador sintactico

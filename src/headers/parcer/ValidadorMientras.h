@@ -6,9 +6,11 @@
 
 //Funcion que valida
 int validadorMientras(vector<string> VSin, int pos){
+     int posTemp,posTempAux;
     if(VSin[pos] == TOKENST[9]){
         //Indicador de mientras
         cout<<"INICIO DE MIENTRAS CORRECTO-----------------SINTACTICO\n";
+        posTemp = est.conversion(pos);//<---aca agarro la posicion real de la linea
         pos = pos+1;
         if(VSin[pos] == ESPT[7]){
         //todobien
@@ -34,11 +36,16 @@ int validadorMientras(vector<string> VSin, int pos){
                                 //todobien
                                 cout<<"CORCHETE  QUE INDICA INICIO DE CODIGO-------SINTACTICO\n";
                                 pos = pos+1;
-                                while(VSin[pos] != ESPT[1]){
+                                posTempAux = posTemp;
+                                while(VSin[pos] != ESPT[1] && pos != VSin.size()-1){
                                     cout<<"CODIGO DENTRO DE MIENTRAS-------------------SINTACTICO\n";   
                                     pos = pos+1;                                  
                                 }
-                                cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
+                                if(pos != VSin.size()-1){
+                                    cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
+                                }else{
+                                    cout<<"En linea: "<<est.VectorLineas[posTempAux]<<" "<<ERRORES[25];
+                                }
                             }else{
                             //se muere
                             cout<<ERRORES[2];

@@ -1,10 +1,9 @@
 INICIO
 ENT Variable := 12 ;
 ENT numero := 4 ;
-/# mierda #\
+/# comentario #\
 FLOT Variable := 12.5 ;
 CAD cadena := "cadenaDeCaracteres" ;
-CAR Respuesta := 'a' ;
 BOOL Varo := VERDADERO ;
 
 FUNC holi ( ENTRADA ) {
