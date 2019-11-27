@@ -3,7 +3,7 @@
 #include <vector>
 #include <algorithm>
 //Archivos Necesarios
-//#include "../../headers/CodeReader.h"
+#include "ImprimirArchivo.h"
 
 //funcion que valida inicio y fin de codigo
 void validadorInicioFin(vector<string> vectorPalabrasAnalizadas,int pos){
@@ -14,7 +14,7 @@ void validadorInicioFin(vector<string> vectorPalabrasAnalizadas,int pos){
     }else{
         //se muere 
       cout<<"En linea: "<<est.VectorLineas[pos]<<" "<<ERRORES[0];
-        exit(0);
+      imprimirError(pos,0);
     }//ifelse
     //verificando que el final del codigo contenga la palabra reservada adecuada
     if(vectorPalabrasAnalizadas[vectorPalabrasAnalizadas.size()-1] == TOKENST[20]){
@@ -24,6 +24,6 @@ void validadorInicioFin(vector<string> vectorPalabrasAnalizadas,int pos){
         //se muere 
         //cout<<ERRORES[1];
         cout<<"En linea: "<<est.VectorLineas[-1]<<" "<<ERRORES[1];
-        exit(0);
+        imprimirError(pos,1);
     }//ifelse
 }//validadorInicioFin

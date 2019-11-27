@@ -32,25 +32,25 @@ int validadorManejoArchivos(vector<string> VSin, int pos){
                         //se muere
                         //cout<<ERRORES[9];
                         cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[9];
-                        exit(0);
+                        imprimirError(posTemp,9);
                     }
                 }else{
                     //se muere
                     //cout<<ERRORES[3];
                     cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[3];
-                    exit(0);
+                    imprimirError(posTemp,3);
                 }
             }else{
                 //se muere
                 //cout<<ERRORES[17];
                 cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[17];
-                exit(0);
+                imprimirError(posTemp,17);
             }
         }else{
             //se muere
             //cout<<ERRORES[6];
             cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
-            exit(0);
+            imprimirError(posTemp,6);
         }    
     }    
     return pos;

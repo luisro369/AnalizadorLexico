@@ -53,49 +53,49 @@ int validadorRepetidor(vector<string> VSin, int pos){
                                     //se muere
                                     //cout<<ERRORES[3];
                                     cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[3];
-                                    exit(0);
+                                    imprimirError(posTemp,3);
                                     }
                                 }else{
                                 //se muere
                                 //cout<<ERRORES[4];
                                 cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[4];
-                                exit(0);
+                                imprimirError(posTemp,4);
                                 }
                             }else{
                             //se muere
                             //cout<<ERRORES[6];
                             cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
-                            exit(0);
+                            imprimirError(posTemp,6);
                             }
                         }else{
                         //se muere
                         //cout<<ERRORES[7];
                         cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[7];
-                        exit(0);
+                        imprimirError(posTemp,7);
                         }
                     }else{
                     //se muere
                     //cout<<ERRORES[6];
                     cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
-                    exit(0);
+                    imprimirError(posTemp,6);
                     }
                 }else{
                 //se muere
                 //cout<<ERRORES[7];
                 cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[7];
-                exit(0);
+                imprimirError(posTemp,7);
                 }
             }else{
             //se muere
             //cout<<ERRORES[6];
             cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
-            exit(0);
+            imprimirError(posTemp,6);
             }
         }else{
         //se muere
         //cout<<ERRORES[5];
         cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[5];
-        exit(0);
+        imprimirError(posTemp,5);
         }
     }
     return pos;

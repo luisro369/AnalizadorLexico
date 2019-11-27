@@ -26,19 +26,19 @@ int validadorDimArreglo(vector<string> VSin, int pos){
                     //se muere
                     //cout<<ERRORES[9];
                     cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[9];
-                    exit(0);
+                    imprimirError(posTemp,9);
                 }
             }else{
                 //se muere
                 //cout<<ERRORES[20];
                 cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[20];
-                exit(0);
+                imprimirError(posTemp,20);
             }   
         }else{
             //se muere
             //cout<<ERRORES[21];
             cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[21];
-            exit(0);
+            imprimirError(posTemp,21);
         }
     }
     return pos;

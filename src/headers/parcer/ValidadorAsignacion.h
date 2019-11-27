@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-//Archivos Necesarios
 
 int identificadorTipo(string tipo){
     int tokenTemp = 0;
@@ -77,25 +76,25 @@ int validadorAsignacion(vector<string> VSin, int pos){
                         //se muere
                         //cout<<ERRORES[9];
                         cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[9];
-                        exit(0);
+                        imprimirError(posTemp,9);
                     }
                 }else{
                     //se muere
                     //cout<<ERRORES[10];
                     cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[10];
-                    exit(0);
+                    imprimirError(posTemp,10);
                 }
             }else{
                 //se muere
                 //cout<<ERRORES[11];
                 cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[11];
-                exit(0);
+                imprimirError(posTemp,11);
             }
         }else{
             //se muere
             //cout<<ERRORES[12];
             cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[12];
-            exit(0);
+            imprimirError(posTemp,12);
         }
     }
     return pos;

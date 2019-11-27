@@ -26,19 +26,19 @@ int validadorDefArreglo(vector<string> VSin, int pos){
                     //se muere
                     //cout<<ERRORES[9];
                     cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[9];
-                    exit(0);
+                    imprimirError(posTemp,9);
                 }
             }else{
                 //se muere
                 //cout<<ERRORES[18];
                 cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[18];
-                exit(0);
+                imprimirError(posTemp,18);
             }   
         }else{
             //se muere
             //cout<<ERRORES[19];
             cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[19];
-            exit(0);
+            imprimirError(posTemp,19);
         }
     }
     return pos;

@@ -45,42 +45,43 @@ int validadorCondicional(vector<string> VSin, int pos){
                                     cout<<"CORCHETE QUE INDICA FIN DE CODIGO-----------SINTACTICO\n";
                                 }else{
                                     cout<<"En linea: "<<est.VectorLineas[posTempAux]<<" "<<ERRORES[25];
+                                    imprimirError(posTemp,25);
                                 }
                             }else{
                             //se muere
                             //cout<<ERRORES[2];
                             cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[2];
-                            exit(0);
+                            imprimirError(posTemp,2);
                             }
                         }else{
                         //se muere
                         //cout<<ERRORES[3];
                         cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[3];
-                        exit(0);
+                        imprimirError(posTemp,3);
                         }
                     }else{
                     //se muere
                     //cout<<ERRORES[4];
                     cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[4];
-                    exit(0);
+                    imprimirError(posTemp,4);
                     }
                 }else{
                 //se muere
                 //cout<<ERRORES[5];
                 cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[5];
-                exit(0);
+                imprimirError(posTemp,5);
                 }
             }else{
             //se muere
             //cout<<ERRORES[4];
             cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[4];
-            exit(0);
+            imprimirError(posTemp,4);
             }
         }else{
         //se muere
         //cout<<ERRORES[6];
         cout<<"En linea: "<<est.VectorLineas[posTemp]<<" "<<ERRORES[6];
-        exit(0);
+        imprimirError(posTemp,6);
         }
     }
     return pos;

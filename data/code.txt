@@ -1,5 +1,5 @@
 INICIO
-ENT Variable:=12;
+ENT variable:=12;
 ENT numero:=4;
 /#comentario#\
 FLOT Variable:=12.5;
@@ -22,5 +22,7 @@ DEV Respuesta;
 MIENTRAS (Variable<Variable){
 ENT entero:=5;
 CAD otroTexto:="OtroTexto";
+}
 
 FINCODIGO
+
