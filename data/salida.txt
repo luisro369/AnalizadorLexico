@@ -1,2 +1,4 @@
 =========ARCHIVO DE COMPILACION DE ERRORES DE AURIGA=========
+En linea: 3 ERROR_0010: valor no corresponde con tipo de dato
+En linea: 8 ERROR_0010: valor no corresponde con tipo de dato
 ================GRACIAS POR USAR CODIGO AURIGA================

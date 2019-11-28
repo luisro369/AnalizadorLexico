@@ -1,11 +1,11 @@
 INICIO
 ENT variable:=12;
-ENT numero:=4;
+ENT numero:=4
 /#comentario#\
 FLOT Variable:=12.5;
 CAD cadena:="cadenaDeCaracteres";
 CAR Respuesta:='a';
-BOOL Varo:=VERDADERO;
+BOOL Varo:=VERDADERO
 
 FUNC holi (ENTRADA){
 CAD texto:="textoADevolver";
